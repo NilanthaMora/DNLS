@@ -1,0 +1,75 @@
+﻿@model IdentityExtension.Models.Procurement
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>Procurement</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="equipCode" class="control-label"></label>
+                <input asp-for="equipCode" class="form-control" />
+                <span asp-validation-for="equipCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="make" class="control-label"></label>
+                <input asp-for="make" class="form-control" />
+                <span asp-validation-for="make" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="model" class="control-label"></label>
+                <input asp-for="model" class="form-control" />
+                <span asp-validation-for="model" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="rlRef" class="control-label"></label>
+                <input asp-for="rlRef" class="form-control" />
+                <span asp-validation-for="rlRef" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="qtyOrdered" class="control-label"></label>
+                <input asp-for="qtyOrdered" class="form-control" />
+                <span asp-validation-for="qtyOrdered" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="qtyApproved" class="control-label"></label>
+                <input asp-for="qtyApproved" class="form-control" />
+                <span asp-validation-for="qtyApproved" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="lastPurchasePrice" class="control-label"></label>
+                <input asp-for="lastPurchasePrice" class="form-control" />
+                <span asp-validation-for="lastPurchasePrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="remarks" class="control-label"></label>
+                <input asp-for="remarks" class="form-control" />
+                <span asp-validation-for="remarks" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="userId" class="control-label"></label>
+                <input asp-for="userId" class="form-control" />
+                <span asp-validation-for="userId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="cDate" class="control-label"></label>
+                <input asp-for="cDate" class="form-control" />
+                <span asp-validation-for="cDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

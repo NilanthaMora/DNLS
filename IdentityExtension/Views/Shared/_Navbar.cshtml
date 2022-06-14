@@ -1,0 +1,27 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> SignInManager
+@*@if ((SignInManager.IsSignedIn(User)) || (ViewData["Nav"].ToString() == "yes"))*@
+@if ((ViewData["Nav"] != null) && (ViewData["Nav"].ToString() == "nav"))
+{
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header logo-section">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <img src="~/images/navy_logo.png" alt="ASP.NET" class="img-responsive img-logo" />
+            </div>
+            <div class="navbar-collapse collapse text-section">
+                <ul class="nav navbar-nav head-ul">
+                    <li class="head-li"><a asp-area="" class="head-title" asp-controller="Home" asp-action="Index">ELECTRICAL AND ELECTRONIC MAINTENANCE SYSTEM   </a></li>
+                    @*<li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>*@
+                </ul>
+                <partial name="_LoginPartial" />
+            </div>
+        </div>
+    </nav>
+}

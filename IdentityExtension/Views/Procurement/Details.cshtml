@@ -1,0 +1,78 @@
+﻿@model IdentityExtension.Models.Procurement
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Procurement</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.equipCode)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.equipCode)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.make)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.make)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.model)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.model)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.rlRef)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.rlRef)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.qtyOrdered)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.qtyOrdered)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.qtyApproved)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.qtyApproved)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.lastPurchasePrice)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.lastPurchasePrice)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.remarks)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.remarks)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.userId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.userId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.cDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.cDate)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

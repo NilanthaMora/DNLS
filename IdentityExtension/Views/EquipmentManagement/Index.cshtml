@@ -1,0 +1,119 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    ViewData["Nav"] = "nav";
+}
+
+<h2>Index</h2>
+<hr/>
+<div class="form_home">
+    <br />
+    <div class="container">
+        <div class="card-group">
+            <div class="row equip-row">
+                <div class="card col-md-4 equip-col">
+                    <a asp-controller="EquipmentTable" asp-action="Index">
+                        <div class="card mb-3 equip-card">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="~/images/add.png"
+                                         alt="Trendy Pants and Shoes"
+                                         class="img-fluid rounded-start" />
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="equip-card-title" >New Equipment</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="card col-md-4 equip-col">
+                    <div class="card mb-3 equip-card">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="~/images/edit.png"
+                                     alt="Trendy Pants and Shoes"
+                                     class="img-fluid rounded-start" />
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="equip-card-title">Edit Equipment</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card col-md-4 equip-col">
+                    <div class="card mb-3 equip-card">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="~/images/update.png"
+                                     alt="Trendy Pants and Shoes"
+                                     class="img-fluid rounded-start" />
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="equip-card-title">Update Status</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row equip-row">
+                <div class="card col-md-4 equip-col">
+                    <div class="card mb-3 equip-card">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="~/images/master.png"
+                                     alt="Trendy Pants and Shoes"
+                                     class="img-fluid rounded-start" />
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="equip-card-title">Master Data for Equipment</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card col-md-4 equip-col">
+                    <div class="card mb-3 equip-card">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="~/images/g47.png"
+                                     alt="Trendy Pants and Shoes"
+                                     class="img-fluid rounded-start" />
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="equip-card-title">G 47 Action</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card col-md-4 equip-col">
+                    <a asp-controller="ViewEquip" asp-action="Index">
+                        <div class="card mb-3 equip-card">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="~/images/view.jpg"
+                                         alt="Trendy Pants and Shoes"
+                                         class="img-fluid rounded-start" />
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="equip-card-title">View Equipment Details</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>                 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

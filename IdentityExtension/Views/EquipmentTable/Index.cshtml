@@ -1,0 +1,93 @@
+﻿@model IEnumerable<IdentityExtension.Models.EquipmentTable>
+
+@{
+    ViewData["Title"] = "Index";
+    ViewBag.role = "user";
+    ViewData["Nav"] = "nav";
+}
+
+<h2 class="head_title">NEW EQUIPMENTS CATEGORY</h2>
+
+@if (ViewBag.role == "user")
+{
+    <p>
+        @*<a asp-action="Create">Create New</a>*@
+        <a asp-action="Create" class="btn btn-info navbar-btn">Create New</a>
+    </p>
+    <table class="equip_table_admin">
+        <thead>
+            <tr>
+                <th class="eq_th_admin">
+                    @Html.DisplayNameFor(model => model.equipmentCode)
+                </th>
+                <th class="eq_th_admin">
+                    @Html.DisplayNameFor(model => model.equipment)
+                </th>
+                <th class="eq_th_admin">
+                    @Html.DisplayNameFor(model => model.equipmentSellCode)
+                </th>
+                <th class="eq_th_admin">
+                    @Html.DisplayNameFor(model => model.imageUrl)
+                </th>
+                <th class="eq_th_admin">
+                    @Html.DisplayNameFor(model => model.equipmentGeneralInq)
+                </th>
+                <th class="eq_th_admin"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="eq_td_admin">
+                        @Html.DisplayFor(modelItem => item.equipmentCode)
+                    </td>
+                    <td class="eq_td_admin">
+                        @Html.DisplayFor(modelItem => item.equipment)
+                    </td>
+                    <td class="eq_td_admin">
+                        @Html.DisplayFor(modelItem => item.equipmentSellCode)
+                    </td>
+                    <td class="eq_td_admin">
+                        @Html.DisplayFor(modelItem => item.imageUrl)
+                    </td>
+                    <td class="eq_td_admin">
+                        @Html.DisplayFor(modelItem => item.equipmentGeneralInq)
+                    </td>
+                    <td class="eq_td_admin">
+                        <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.id">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
+
+@*User View*@
+
+
+@if (ViewBag.role == "user")
+{
+    <table class="equip_table">
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr class="eq_tr">
+                    <td class="eq_td">
+                        <img src=@Html.DisplayFor(modelItem => item.imageUrl) alt="..." class="img-thumbnail eqip">
+                    </td>
+                    <td class="eq_td">
+                        @Html.DisplayFor(modelItem => item.equipment)
+                    </td>
+                    <td class="eq_td">
+                        <input type="submit" value="Select" class="btn btn-default eqip_input" />
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

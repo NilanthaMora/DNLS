@@ -1,0 +1,258 @@
+﻿
+body {
+}   
+
+   
+@media (max-width: 575.98px) {
+    .img-logo {
+        width: 50px !important;
+        height: auto;
+        margin: 5%;
+    }
+    .body-main {
+        padding-top: 100px !important;
+    }
+    .navbar-toggle {
+        height: 36px;
+        margin-top: 32px;
+        margin-bottom: 32px;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .img-logo {
+        width: 50px !important;
+        height: auto;
+        margin: 5%;
+    }
+    .body-main {
+        padding-top: 10px !important;
+    }
+    .navbar-toggle {
+        height: 36px;
+        margin-top: 32px;
+        margin-bottom: 32px;
+    }
+
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .text-section {
+        max-width: 90%;
+        margin-left: 10% !important;
+    }
+
+    .body-main {
+        padding-top: 115px !important;
+    }
+
+    .img-logo {
+        width: 80px !important;
+        height: auto;
+        margin: 15% 0;
+    }
+
+    .logo-section {
+        max-width: 10%;
+        margin-left: 0;
+    }
+
+    .text-section {
+        max-width: 90%;
+        margin-left: 10% !important;
+    }
+
+    .head-ul {
+        height:100px;
+    }
+
+    .head-li {
+        height: 100px;
+    }
+    .head-account-ul {
+        height: 100px;
+        padding-top: 17px;
+        padding-bottom: 17px;
+    }
+
+    .head-account-li {
+        height: 100px;
+        padding-top: 17px;
+        padding-bottom: 17px;
+    }
+
+    .head-title {
+        margin-top: 35px;
+        margin-bottom: 35px;
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .text-section {
+        max-width: 90%;
+        margin-left: 10% !important;
+    }
+
+    .body-main {
+        padding-top: 160px !important;
+    }
+    .head-ul {
+        height: 160px;
+        width: 85%;
+    }
+
+    .head-li {
+        height: 160px;
+        width: 100%;
+    }
+
+    .head-account-ul {
+        height: 160px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        width: 15%;
+        display: flex;
+    }
+
+    .head-account-li {
+        height: 160px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .head-title {
+        font-size: 30px;
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+
+    .img-logo {
+        width: 100px !important;
+        height: auto;
+        margin: 15% 0;
+    }
+
+    .logo-section {
+        max-width: 10%;
+        margin-left: 0;
+    }
+
+    .text-section {
+        max-width: 90%;
+        margin-left: 10% !important;
+    }
+    .head-ul {
+        height: 160px;
+    }
+
+    .head-li {
+        height: 160px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .text-section {
+        max-width: 90%;
+        margin-left: 10% !important;
+    }
+
+    .body-main {
+        padding-top: 160px !important;
+        
+    }
+    .head-ul {
+        height: 160px;
+        width:85%;
+    }
+
+    .head-li {
+        height: 160px;
+        width: 100%;
+    }
+
+    .head-account-ul {
+        height: 160px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        width:15%;
+        display:flex;
+    }
+
+    .head-account-li {
+        height: 160px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .head-title {
+        font-size: 30px;
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+
+    .img-logo {
+        width: 100px !important;
+        height: auto;
+        margin: 15% 0;
+    }
+
+    .logo-section {
+        max-width: 10%;
+        margin-left: 0;
+    }
+
+    .text-section {
+        max-width: 90%;
+        margin-left: 10% !important;
+    }
+
+    .body-center {
+        background-image: url('walpaper3.jpg');
+        background-repeat: no-repeat;
+    }
+
+    .home-grid-img {
+        height:180px;
+        width:92%;
+        margin:4%;
+    }
+
+    .home-grid-col {
+        width:33.33%
+    }
+
+    .home-grid-card {
+        border: 2px #75caeb solid;
+        border-radius: 3%;
+        margin: 2%;
+        height: 400px
+    }
+    .home-grid-card-body {
+        margin: 4%;
+    }
+    .home-grid-title {
+        text-align: center;
+        font-family: ui-sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .home-grid-text {
+        font-family: ui-sans-serif;
+        font-size: 16px;
+    }
+    .home-grid-btn {
+        background-color: #75caeb;
+        border-color: #5fc1e8;
+    }
+}
+
+.head-title {
+    text-align: center;
+    color: black !important;
+    font-family: ui-sans-serif;
+    vertical-align: middle;
+}
+
+
+    

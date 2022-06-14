@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    ViewData["Nav"] = "nav";
+}
+
+<div class="form_home">
+    <br />
+    <div class="container">
+        <div class="card-group">
+            <div class="row">
+                <div class="card text-center col-md-4 home-grid-col">
+                    <div class="card home-grid-card">
+                        <img src="~/images/equipment2.jpg" class="card-img-top home-grid-img" alt="...">
+                        <div class="card-body home-grid-card-body">
+                            <h5 class="card-title home-grid-title">EQUIPMENT MANAGEMENT</h5>
+                            <p class="card-text home-grid-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a asp-controller="EquipmentManagement" asp-action="Index" class="btn btn-primary home-grid-btn">Select</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card col-md-4 home-grid-col">
+                    <div class="card text-center home-grid-card">
+                        <img src="~/images/procurement.jpg" class="card-img-top home-grid-img" alt="...">
+                        <div class="card-body home-grid-card-body">
+                            <h5 class="card-title home-grid-title">PROCUREMENT MANAGEMENT</h5>
+                            <p class="card-text home-grid-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a asp-controller="ProcumentManagement" asp-action="Index" class="btn btn-primary home-grid-btn">Select</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card col-md-4 home-grid-col">
+                    <div class="card text-center home-grid-card">
+                        <img src="~/images/bill.jpg" class="card-img-top home-grid-img" alt="...">
+                        <div class="card-body home-grid-card-body">
+                            <h5 class="card-title home-grid-title">ELECTRICAL/FUEL BILL</h5>
+                            <p class="card-text home-grid-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-primary home-grid-btn">Select</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

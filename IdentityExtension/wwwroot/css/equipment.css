@@ -1,0 +1,88 @@
+﻿body {
+}
+
+.eqip {
+    height: 100px !important;
+    width: 100px;
+}
+
+.eq_td {
+    vertical-align: middle !important;
+    border: none;
+    font-family: ui-sans-serif;
+    font-size: 20px;
+    color: #5bc0de;
+    padding: 8px;
+}
+
+.eq_tr {
+    background-color: #f1f2f2 !important;
+    margin-bottom: 1% !important;
+}
+
+.head_title {
+    text-align: center;
+    margin: 5%;
+    font-family: ui-sans-serif;
+    color: #5bc0de;
+    font-weight: 600;
+    font-size: 30px;
+}
+
+.eqip_input {
+    background-color: #5bc0de;
+    border: 1px #5bc0de;
+    color: white;
+    padding: 4% 15%;
+    font-size: 18px;
+    font-family: ui-sans-serif;
+}
+
+.equip_table {
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+.equip_table_admin {
+    background-color: #f1f2f2 !important;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+.eq_th_admin {
+    padding: 8px;
+    vertical-align: bottom;
+    border-bottom: 2px solid #ddd;
+}
+
+.eq_td_admin {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 1px solid #ddd;
+}
+
+.rounded-start {
+    width:100px;
+    height:100px;
+}
+
+.equip-card {
+    border: 2px #75caeb solid;
+    padding: 5% 10%;
+    border-radius: 5px;
+}
+
+.equip-card-title {
+    font-size: 25px;
+    font-family: ui-sans-serif;
+    text-align: center;
+}
+
+.equip-row {
+    margin-bottom: 2%;
+}
