@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 
 namespace IdentityExtension.Areas.Identity.Pages.Account
 {
@@ -77,7 +78,23 @@ namespace IdentityExtension.Areas.Identity.Pages.Account
                 var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: true);
                 if (result.Succeeded)
                 {
+                    var data = await _signInManager.UserManager.FindByEmailAsync(Input.Email);
+
+                    User user = new User()
+                    {
+                        Id = data.Id,
+                        Email = data.Email,
+                        UserRole = data.UserRole
+                    };
+
+
+
+                    TempData["user"] = user.ToString();
+                    TempData["user2"] = "user2";
+                    
+
                     _logger.LogInformation("User logged in.");
+
                     return LocalRedirect(returnUrl);
                 }
                 if (result.RequiresTwoFactor)

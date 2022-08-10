@@ -1,0 +1,451 @@
+﻿@model IEnumerable<IdentityExtension.Models.Epirb>
+
+@{
+    ViewData["Title"] = "EPIRBSet";
+    string[] ob = ViewBag.selectedColumn;
+    ViewData["Nav"] = "nav";
+}
+
+<div class="container">
+    <div class="card-group">
+        <div class="row title-row">
+            <div class="card col-md-2 equip-col"></div>
+            <div class="card col-md-8 equip-col"><h2 class="head_title">EPIRB Details</h2></div>
+            <div class="card col-md-2 equip-col back-btn">
+                <a asp-controller="AreaWice" asp-action="Index">
+                    <img src="~/images/back2.png" alt="..." class="img-thumbnail equip-back">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
+<table class="equip_table_admin table table-striped">
+    <thead>
+        <tr>
+            @{
+            if (ob.Contains("Id"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayNameFor(model => model.Equipment.id)
+                </th>
+            }
+            }
+            @{
+            if (ob.Contains("Sr_No"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayNameFor(model => model.Equipment.srNo)
+                </th>
+            }
+            }
+            @{
+            if (ob.Contains("Make"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayNameFor(model => model.Equipment.make)
+                </th>
+            }
+            }
+            @{
+            if (ob.Contains("Model"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayNameFor(model => model.Equipment.model)
+                </th>
+            }
+            }
+            @{
+            if (ob.Contains("Base"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayNameFor(model => model.Equipment.Base.description)
+                </th>
+            }
+            }
+            @{
+            if (ob.Contains("Sub_Unit"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayNameFor(model => model.Equipment.Base.SubUnits)
+                </th>
+            }
+            }
+            @{
+            if (ob.Contains("Location"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayNameFor(model => model.location)
+                </th>
+            }
+            }
+            @{
+            if (ob.Contains("State"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayNameFor(model => model.Equipment.state)
+                </th>
+            }
+            }
+            @{
+            if (ob.Contains("Date_Installed"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayNameFor(model => model.dateInstalled)
+                </th>
+            }
+            }
+            @{
+            if (ob.Contains("Date_Modified"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayNameFor(model => model.dateModified)
+                </th>
+            }
+            }
+            @{
+            if (ob.Contains("Remarks"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayNameFor(model => model.Equipment.remarks)
+                </th>
+            }
+            }
+            @{
+            if (ob.Contains("User_Id"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayNameFor(model => model.Equipment.userId)
+                </th>
+            }
+            }
+            @{
+            if (ob.Contains("C_Date"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayNameFor(model => model.Equipment.cDate)
+                </th>
+            }
+            }
+            @{
+            if (ob.Contains("Profile_Num"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayNameFor(model => model.pfileNum)
+                </th>
+            }
+            }
+            @{
+            if (ob.Contains("Profile_Date"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayNameFor(model => model.pfileDate)
+                </th>
+            }
+            }
+            @{
+            if (ob.Contains("Price"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayNameFor(model => model.price)
+                </th>
+            }
+            }
+            @{
+            if (ob.Contains("We_Date"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayNameFor(model => model.weDate)
+                </th>
+            }
+            }
+            @{
+            if (ob.Contains("Action"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayNameFor(model => model.Equipment.action)
+                </th>
+            }
+            }
+            @{
+            if (ob.Contains("G47_Remarks"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayNameFor(model => model.Equipment.g47Remarks)
+                </th>
+            }
+            }
+            @{
+            if (ob.Contains("G47_Date"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayNameFor(model => model.Equipment.g47Date)
+                </th>
+            }
+            }
+            @{
+            if (ob.Contains("Del"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayNameFor(model => model.Equipment.del)
+                </th>
+            }
+            }
+            @{
+            if (ob.Contains("Del_Date"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayNameFor(model => model.Equipment.delDate)
+                </th>
+            }
+            }
+            @{
+            if (ob.Contains("MMSI_Reg"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayNameFor(model => model.mmsiReg)
+                </th>
+            }
+            }
+            @{
+            if (ob.Contains("Date_Inspection"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayNameFor(model => model.dateModified)
+                </th>
+            }
+            }
+            @{
+            if (ob.Contains("HRU_Rep_Date"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayNameFor(model => model.hruRepDate)
+                </th>
+            }
+            }
+            @{
+            if (ob.Contains("Battery_Expire_Date"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayNameFor(model => model.batteryExpDate)
+                </th>
+            }
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+    {
+        <tr>
+            @{
+            if (ob.Contains("Id"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayFor(modelItem => item.Equipment.id)
+                </th>
+            }
+            }
+            @{
+            if (ob.Contains("Sr_No"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayFor(modelItem => item.Equipment.srNo)
+                </th>
+            }
+            }
+            @{
+            if (ob.Contains("Make"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayFor(modelItem => item.Equipment.make)
+                </th>
+            }
+            }
+            @{
+            if (ob.Contains("Model"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayFor(modelItem => item.Equipment.model)
+                </th>
+            }
+            }
+            @{
+            if (ob.Contains("Base"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayFor(modelItem => item.Equipment.Base.description)
+                </th>
+            }
+            }
+            @{
+            if (ob.Contains("Sub_Unit"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayFor(modelItem => item.Equipment.Base.SubUnits)
+                </th>
+            }
+            }
+            @{
+            if (ob.Contains("Location"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayFor(modelItem => item.location)
+                </th>
+            }
+            }
+            @{
+            if (ob.Contains("State"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayFor(modelItem => item.Equipment.state)
+                </th>
+            }
+            }
+            @{
+            if (ob.Contains("Date_Installed"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayFor(modelItem => item.dateInstalled)
+                </th>
+            }
+            }
+            @{
+            if (ob.Contains("Date_Modified"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayFor(modelItem => item.dateModified)
+                </th>
+            }
+            }
+            @{
+            if (ob.Contains("Remarks"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayFor(modelItem => item.Equipment.remarks)
+                </th>
+            }
+            }
+            @{
+            if (ob.Contains("User_Id"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayFor(modelItem => item.Equipment.userId)
+                </th>
+            }
+            }
+            @{
+            if (ob.Contains("C_Date"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayFor(modelItem => item.Equipment.cDate)
+                </th>
+            }
+            }
+            @{
+            if (ob.Contains("Profile_Num"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayFor(modelItem => item.pfileNum)
+                </th>
+            }
+            }
+            @{
+            if (ob.Contains("Profile_Date"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayFor(modelItem => item.pfileDate)
+                </th>
+            }
+            }
+            @{
+            if (ob.Contains("Price"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayFor(modelItem => item.price)
+                </th>
+            }
+            }
+            @{
+            if (ob.Contains("We_Date"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayFor(modelItem => item.weDate)
+                </th>
+            }
+            }
+            @{
+            if (ob.Contains("Action"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayFor(modelItem => item.Equipment.action)
+                </th>
+            }
+            }
+            @{
+            if (ob.Contains("G47_Remarks"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayFor(modelItem => item.Equipment.g47Remarks)
+                </th>
+            }
+            }
+            @{
+            if (ob.Contains("G47_Date"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayFor(modelItem => item.Equipment.g47Date)
+                </th>
+            }
+            }
+            @{
+            if (ob.Contains("Del"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayFor(modelItem => item.Equipment.del)
+                </th>
+            }
+            }
+            @{
+            if (ob.Contains("Del_Date"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayFor(modelItem => item.Equipment.delDate)
+                </th>
+            }
+            }
+            @{
+            if (ob.Contains("MMSI_Reg"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayFor(modelItem => item.mmsiReg)
+                </th>
+            }
+            }
+            @{
+            if (ob.Contains("Date_Inspection"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayFor(modelItem => item.dateModified)
+                </th>
+            }
+            }
+            @{
+            if (ob.Contains("HRU_Rep_Date"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayFor(modelItem => item.hruRepDate)
+                </th>
+            }
+            }
+            @{
+            if (ob.Contains("Battery_Expire_Date"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayFor(modelItem => item.batteryExpDate)
+                </th>
+            }
+            }
+        </tr>
+    }
+    </tbody>
+</table>

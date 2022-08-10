@@ -1,0 +1,158 @@
+﻿@model IdentityExtension.Models.CCTV
+
+@{
+    ViewData["Title"] = "Create";
+    ViewData["Nav"] = "nav";
+}
+
+<div class="container">
+    <div class="card-group">
+        <div class="row">
+            <div class="card col-md-2 equip-col"></div>
+            <div class="card col-md-8 equip-col"><h2 class="head_title">Create CCTV</h2></div>
+            <div class="card col-md-2 equip-col back-btn">
+                <a asp-controller="EquipmentTable" asp-action="Index">
+                    <img src="~/images/back2.png" alt="..." class="img-thumbnail equip-back">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
+<div class="row form-background">
+    <div class="col-md-12 form-body">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Equipment.srNo" class="control-label"></label>
+                <input asp-for="Equipment.srNo" class="form-control" />
+                <span asp-validation-for="Equipment.srNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Equipment.make" class="control-label"></label>
+                <select asp-for="Equipment.make" class="form-control" asp-items="ViewBag.make"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Equipment.model" class="control-label"></label>
+                <select asp-for="Equipment.model" class="form-control" asp-items="ViewBag.model"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Equipment.state" class="control-label"></label>
+                <select asp-for="Equipment.state" class="form-control" asp-items="ViewBag.equipStatus"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Equipment.eqBase" class="control-label"></label>
+                <select asp-for="Equipment.eqBase" class="form-control" asp-items="ViewBag.eqBase"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Equipment.remarks" class="control-label"></label>
+                <input asp-for="Equipment.remarks" class="form-control" />
+                <span asp-validation-for="Equipment.remarks" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Equipment.cDate" class="control-label"></label>
+                <input asp-for="Equipment.cDate" class="form-control" />
+                <span asp-validation-for="Equipment.cDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Equipment.action" class="control-label"></label>
+                <input asp-for="Equipment.action" class="form-control" />
+                <span asp-validation-for="Equipment.action" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Equipment.g47Remarks" class="control-label"></label>
+                <input asp-for="Equipment.g47Remarks" class="form-control" />
+                <span asp-validation-for="Equipment.g47Remarks" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Equipment.g47Date" class="control-label"></label>
+                <input asp-for="Equipment.g47Date" class="form-control" />
+                <span asp-validation-for="Equipment.g47Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Equipment.del" class="control-label"></label>
+                <input asp-for="Equipment.del" class="form-control" />
+                <span asp-validation-for="Equipment.del" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Equipment.delDate" class="control-label"></label>
+                <input asp-for="Equipment.delDate" class="form-control" />
+                <span asp-validation-for="Equipment.delDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Equipment.eqTId" class="control-label"></label>
+                <select asp-for="Equipment.eqTId" class="form-control" asp-items="ViewBag.eqTId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="location" class="control-label"></label>
+                <input asp-for="location" class="form-control" />
+                <span asp-validation-for="location" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="dateInstalled" class="control-label"></label>
+                <input asp-for="dateInstalled" class="form-control" />
+                <span asp-validation-for="dateInstalled" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="dateModified" class="control-label"></label>
+                <input asp-for="dateModified" class="form-control" />
+                <span asp-validation-for="dateModified" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="systemType" class="control-label"></label>
+                <input asp-for="systemType" class="form-control" />
+                <span asp-validation-for="systemType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="systemId" class="control-label"></label>
+                <input asp-for="systemId" class="form-control" />
+                <span asp-validation-for="systemId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="channels" class="control-label"></label>
+                <input asp-for="channels" class="form-control" />
+                <span asp-validation-for="channels" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="noOfCameras" class="control-label"></label>
+                <input asp-for="noOfCameras" class="form-control" />
+                <span asp-validation-for="noOfCameras" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="noOfDisplays" class="control-label"></label>
+                <input asp-for="noOfDisplays" class="form-control" />
+                <span asp-validation-for="noOfDisplays" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="noOfHdd" class="control-label"></label>
+                <input asp-for="noOfHdd" class="form-control" />
+                <span asp-validation-for="noOfHdd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="typeOfCameras" class="control-label"></label>
+                <input asp-for="typeOfCameras" class="form-control" />
+                <span asp-validation-for="typeOfCameras" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="typeOfDisplays" class="control-label"></label>
+                <input asp-for="typeOfDisplays" class="form-control" />
+                <span asp-validation-for="typeOfDisplays" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="typeOfHdd" class="control-label"></label>
+                <input asp-for="typeOfHdd" class="form-control" />
+                <span asp-validation-for="typeOfHdd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="typeOfPeriod" class="control-label"></label>
+                <input asp-for="typeOfPeriod" class="form-control" />
+                <span asp-validation-for="typeOfPeriod" class="text-danger"></span>
+            </div>
+            <div class="form-group submit-group">
+                <input type="submit" value="Create" class="btn-form" />
+            </div>
+        </form>
+    </div>
+</div>
+
+

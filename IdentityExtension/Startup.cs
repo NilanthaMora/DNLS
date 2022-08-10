@@ -53,6 +53,8 @@ namespace IdentityExtension
                 options.Conventions.AddAreaPageRoute("Identity", "/Account/Login", "");
             }).SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
+            services.AddSession();
+            services.AddDistributedMemoryCache();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
@@ -75,6 +77,7 @@ namespace IdentityExtension
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+            app.UseSession();
 
             app.UseAuthentication();
 
@@ -91,8 +94,8 @@ namespace IdentityExtension
                     name: "home",
                     template: "{controller=Home}/{action=Index}/{id?}");
                 routes.MapRoute(
-                    name: "procurement",
-                    template: "{controller=Procurement}/{action=Index}/{id?}");
+                    name: "management",
+                    template: "{controller=ProcurementManagement}/{action=Index}/{id?}");
                 routes.MapRoute(
                     name: "equipment-management",
                     template: "{controller=EquipmentManagement}/{action=Index}/{id?}");

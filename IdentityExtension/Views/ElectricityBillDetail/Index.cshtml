@@ -1,0 +1,155 @@
+﻿@model IEnumerable<IdentityExtension.Models.Bill.ElectricityBillDetail>
+
+@{
+    ViewData["Title"] = "Index";
+    ViewData["Nav"] = "nav";
+}
+
+<div class="container">
+    <div class="card-group">
+        <div class="row">
+            <div class="card col-md-2 equip-col"></div>
+            <div class="card col-md-8 equip-col"><h2 class="head_title">View Electricity Bill Details</h2></div>
+            <div class="card col-md-2 equip-col back-btn">
+                <a asp-controller="ElectricityBill" asp-action="ConsumptionElectricity">
+                    <img src="~/images/back2.png" alt="..." class="img-thumbnail equip-back">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
+<table class="equip_table_admin table table-striped">
+    <thead>
+        <tr>
+            <th class="eq_th_admin">
+                @Html.DisplayNameFor(model => model.billType)
+            </th>
+            <th class="eq_th_admin">
+                @Html.DisplayNameFor(model => model.year)
+            </th>
+            <th class="eq_th_admin">
+                @Html.DisplayNameFor(model => model.month)
+            </th>
+            <th class="eq_th_admin">
+                @Html.DisplayNameFor(model => model.lastMonth)
+            </th>
+            <th class="eq_th_admin">
+                @Html.DisplayNameFor(model => model.currentMonth)
+            </th>
+            <th class="eq_th_admin">
+                @Html.DisplayNameFor(model => model.unit)
+            </th>
+            <th class="eq_th_admin">
+                @Html.DisplayNameFor(model => model.chargePerUnit)
+            </th>
+            <th class="eq_th_admin">
+                @Html.DisplayNameFor(model => model.departmentCharge)
+            </th>
+            <th class="eq_th_admin">
+                @Html.DisplayNameFor(model => model.fixedCharges)
+            </th>
+            <th class="eq_th_admin">
+                @Html.DisplayNameFor(model => model.monthlyCost)
+            </th>
+            <th class="eq_th_admin">
+                @Html.DisplayNameFor(model => model.billConfirm)
+            </th>
+            <th class="eq_th_admin">
+                @Html.DisplayNameFor(model => model.createdDate)
+            </th>
+            <th class="eq_th_admin">
+                @Html.DisplayNameFor(model => model.userId)
+            </th>
+            <th class="eq_th_admin">
+                @Html.DisplayNameFor(model => model.editDate)
+            </th>
+            <th class="eq_th_admin">
+                @Html.DisplayNameFor(model => model.editUserId)
+            </th>
+            <th class="eq_th_admin">
+                @Html.DisplayNameFor(model => model.billConUserId)
+            </th>
+            <th class="eq_th_admin">
+                @Html.DisplayNameFor(model => model.billConDate)
+            </th>
+            <th class="eq_th_admin">
+                @Html.DisplayNameFor(model => model.adfRefer)
+            </th>
+            <th class="eq_th_admin">
+                @Html.DisplayNameFor(model => model.adfDate)
+            </th>
+            <th class="eq_th_admin"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="eq_th_admin">
+                    @Html.DisplayFor(modelItem => item.billType)
+                </td>
+                <td class="eq_th_admin">
+                    @Html.DisplayFor(modelItem => item.year)
+                </td>
+                <td class="eq_th_admin">
+                    @Html.DisplayFor(modelItem => item.month)
+                </td>
+                <td class="eq_th_admin">
+                    @Html.DisplayFor(modelItem => item.lastMonth)
+                </td>
+                <td class="eq_th_admin">
+                    @Html.DisplayFor(modelItem => item.currentMonth)
+                </td>
+                <td class="eq_th_admin">
+                    @Html.DisplayFor(modelItem => item.unit)
+                </td>
+                <td class="eq_th_admin">
+                    @Html.DisplayFor(modelItem => item.chargePerUnit)
+                </td>
+                <td class="eq_th_admin">
+                    @Html.DisplayFor(modelItem => item.departmentCharge)
+                </td>
+                <td class="eq_th_admin">
+                    @Html.DisplayFor(modelItem => item.fixedCharges)
+                </td>
+                <td class="eq_th_admin">
+                    @Html.DisplayFor(modelItem => item.monthlyCost)
+                </td>
+                <td class="eq_th_admin">
+                    @Html.DisplayFor(modelItem => item.billConfirm)
+                </td>
+                <td class="eq_th_admin">
+                    @Html.DisplayFor(modelItem => item.createdDate)
+                </td>
+                <td class="eq_th_admin">
+                    @Html.DisplayFor(modelItem => item.userId)
+                </td>
+                <td class="eq_th_admin">
+                    @Html.DisplayFor(modelItem => item.editDate)
+                </td>
+                <td class="eq_th_admin">
+                    @Html.DisplayFor(modelItem => item.editUserId)
+                </td>
+                <td class="eq_th_admin">
+                    @Html.DisplayFor(modelItem => item.billConUserId)
+                </td>
+                <td class="eq_th_admin">
+                    @Html.DisplayFor(modelItem => item.billConDate)
+                </td>
+                <td class="eq_th_admin">
+                    @Html.DisplayFor(modelItem => item.adfRefer)
+                </td>
+                <td class="eq_th_admin">
+                    @Html.DisplayFor(modelItem => item.adfDate)
+                </td>
+                <td class="eq_th_admin">
+                    <a asp-action="Edit" asp-route-id="@item.eleAccId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.eleAccId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.eleAccId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

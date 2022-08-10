@@ -5,8 +5,22 @@
     ViewBag.role = "user";
     ViewData["Nav"] = "nav";
 }
+<div class="container">
+    <div class="card-group">
+        <div class="row title-row">
+            <div class="card col-md-2 equip-col"></div>
+            <div class="card col-md-8 equip-col"><h2 class="head_title">New Equipments Category</h2></div>
+            <div class="card col-md-2 equip-col back-btn">
+                <a asp-controller="EquipmentManagement" asp-action="Index">
+                    <img src="~/images/back2.png" alt="..." class="img-thumbnail equip-back">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
 
-<h2 class="head_title">NEW EQUIPMENTS CATEGORY</h2>
+@*<h2 class="head_title">NEW EQUIPMENTS CATEGORY</h2>*@
 
 @if (ViewBag.role == "user")
 {
@@ -14,7 +28,7 @@
         @*<a asp-action="Create">Create New</a>*@
         <a asp-action="Create" class="btn btn-info navbar-btn">Create New</a>
     </p>
-    <table class="equip_table_admin">
+    <table class="equip_table_admin table table-striped">
         <thead>
             <tr>
                 <th class="eq_th_admin">
@@ -22,6 +36,9 @@
                 </th>
                 <th class="eq_th_admin">
                     @Html.DisplayNameFor(model => model.equipment)
+                </th>
+                <th class="eq_th_admin">
+                    @Html.DisplayNameFor(model => model.varName)
                 </th>
                 <th class="eq_th_admin">
                     @Html.DisplayNameFor(model => model.equipmentSellCode)
@@ -44,6 +61,9 @@
                     </td>
                     <td class="eq_td_admin">
                         @Html.DisplayFor(modelItem => item.equipment)
+                    </td>
+                    <td class="eq_td_admin">
+                        @Html.DisplayFor(modelItem => item.varName)
                     </td>
                     <td class="eq_td_admin">
                         @Html.DisplayFor(modelItem => item.equipmentSellCode)
@@ -84,7 +104,10 @@
                         @Html.DisplayFor(modelItem => item.equipment)
                     </td>
                     <td class="eq_td">
-                        <input type="submit" value="Select" class="btn btn-default eqip_input" />
+                        @Html.DisplayFor(modelItem => item.varName)
+                    </td>
+                    <td class="eq_td">
+                        <a asp-controller="@item.varName" asp-action="create" class="btn btn-info">Select</a>
                     </td>
                 </tr>
             }

@@ -1,0 +1,126 @@
+﻿@model IEnumerable<IdentityExtension.Models.Engine>
+
+@{
+    ViewData["Title"] = "Index";
+    ViewData["Nav"] = "nav";
+}
+
+<div class="container">
+    <div class="card-group">
+        <div class="row">
+            <div class="card col-md-2 equip-col"></div>
+            <div class="card col-md-8 equip-col"><h2 class="head_title">Engine Details</h2></div>
+            <div class="card col-md-2 equip-col back-btn">
+                @if (ViewBag.menu != null)
+                {
+                <a asp-controller="EquipmentManagement" asp-action="IndexEditMenu" asp-route-id="@ViewBag.menu">
+                    <img src="~/images/back2.png" alt="..." class="img-thumbnail equip-back">
+                </a>
+                }
+                @if (ViewBag.menu == null)
+                {
+                <a asp-controller="equipment-details">
+                    <img src="~/images/back2.png" alt="..." class="img-thumbnail equip-back">
+                </a>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
+<table class="equip_table_admin table table-striped">
+    <thead>
+        <tr>
+            <th class="eq_th_admin">
+                @Html.DisplayNameFor(model => model.Equipment.srNo)
+            </th>
+            <th class="eq_th_admin">
+                @Html.DisplayNameFor(model => model.Equipment.make)
+            </th>
+            <th class="eq_th_admin">
+                @Html.DisplayNameFor(model => model.Equipment.model)
+            </th>
+            <th class="eq_th_admin">
+                @Html.DisplayNameFor(model => model.powerRating)
+            </th>
+            <th class="eq_th_admin">
+                @Html.DisplayNameFor(model => model.Equipment.Base.description)
+            </th>
+            <th class="eq_th_admin">
+                @Html.DisplayNameFor(model => model.dateInstalled)
+            </th>
+            <th class="eq_th_admin">
+                @Html.DisplayNameFor(model => model.Equipment.Base.baseType)
+            </th>
+            <th class="eq_th_admin">
+                @Html.DisplayNameFor(model => model.Equipment.state)
+            </th>
+            <th class="eq_th_admin">
+                @Html.DisplayNameFor(model => model.Equipment.remarks)
+            </th>
+            @if (ViewBag.menu == "edit")
+            {
+            <th class="eq_th_admin">
+            </th>
+            }
+            else if (ViewBag.menu == "update")
+            {
+            <th class="eq_th_admin">
+            </th>
+            }
+            else if (ViewBag.menu == "add-g47")
+            {
+            <th class="eq_th_admin">
+            </th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td class="eq_th_admin">
+                @Html.DisplayFor(modelItem => item.Equipment.srNo)
+            </td>
+            <td class="eq_th_admin">
+                @Html.DisplayFor(modelItem => item.Equipment.make)
+            </td>
+            <td class="eq_th_admin">
+                @Html.DisplayFor(modelItem => item.Equipment.model)
+            </td>
+            <td class="eq_th_admin">
+                @Html.DisplayFor(modelItem => item.powerRating)
+            </td>
+            <td class="eq_th_admin">
+                @Html.DisplayFor(modelItem => item.Equipment.Base.description)
+            </td>
+            <td class="eq_th_admin">
+                @Html.DisplayFor(modelItem => item.dateInstalled)
+            </td>
+            <td class="eq_th_admin">
+                @Html.DisplayFor(modelItem => item.Equipment.Base.ShipType.description)
+            </td>
+            <td class="eq_th_admin">
+                @Html.DisplayFor(modelItem => item.Equipment.state)
+            </td>
+            <td class="eq_th_admin">
+                @Html.DisplayFor(modelItem => item.Equipment.remarks)
+            </td>
+            <td class="eq_th_admin">
+                @if (ViewBag.menu == "edit")
+                {
+                <a class="edit" asp-action="Edit" asp-route-id="@item.id">Edit</a>
+                }
+                else if (ViewBag.menu == "update")
+                {
+                <a class="edit" asp-action="update" asp-route-id="@item.id">Update</a>
+                }
+                else if (ViewBag.menu == "add-g47")
+                {
+                <a class="edit" asp-action="add-g47" asp-route-id="@item.id">Add G47</a>
+                }
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

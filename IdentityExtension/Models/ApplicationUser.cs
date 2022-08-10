@@ -14,6 +14,6 @@ namespace IdentityExtension.Models
         public string   UserRole      { get; set; }        
         public string   MobileContact { get; set; }
 
-        public List<Procurement> Procurements { get; set; } 
+        //public List<Procurement> Procurements { get; set; } 
     }
 }

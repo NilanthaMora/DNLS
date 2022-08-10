@@ -13,5 +13,7 @@ namespace IdentityExtension.Data
             : base(options)
         {
         }
+
+        public DbSet<ApplicationUser> applicationUsers { get; set; }
     }
 }

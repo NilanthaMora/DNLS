@@ -1,0 +1,12 @@
+﻿@model IdentityExtension.Models.Engine
+@{
+    ViewData["Title"] = "IndexColumn";
+}
+
+<h2>@ViewBag.eqCol</h2>
+
+@foreach (var col in @ViewBag.column)
+{
+    <h2>@col</h2>
+}
+

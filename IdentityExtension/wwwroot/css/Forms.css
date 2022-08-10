@@ -1,0 +1,93 @@
+﻿body {
+}
+
+.form-background {
+    background-color: #75caeb;
+    padding: 5% 10%;
+    left: 15%;
+}
+
+.form-body {
+    width: 70%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 5%;
+    left: 15%;
+}
+.form-body-radio {
+    width: 90%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 5%;
+    left: 5%;
+}
+
+.form-group label {
+    font-family: ui-sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.form-group select {
+    font-family: ui-sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.submit-group {
+    text-align: center;
+}
+
+.submit-group input {
+    background-color: #75caeb;
+    border-color: #75caeb;
+    color: #ffffff;
+    margin-top: 10px;
+    font-size: 14px;
+    font-family: ui-sans-serif;
+}
+.edit {
+    color: forestgreen;
+}
+
+.delete {
+    color: orangered;
+}
+
+.delete-card {
+    color: #ffffff;
+    font-family: ui-sans-serif;
+    border-radius: 10px;
+    padding: 5% 0;
+    background-color: #2a334b;
+}
+
+.delete-title {
+    font-size: 25px;
+}
+
+.delete-title-sub {
+    color: #ffffff;
+    font-size: 18px;
+}
+
+.delete-btn {
+    background-color: #ef876d;
+    border-color: #ed7e62;
+    color: #ffffff;
+}
+
+.back-btn {
+    margin: 4% 0 0 0;
+    text-align: center;
+}
+
+.btn-form {
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 1% 5%;
+    font-size: 18px !important;
+}
+.btn-form:hover {
+    background-color: #58bde4 !important;
+}

@@ -15,62 +15,71 @@
     <script src="~/js/form_register.js" asp-append-version="true"></script>
 }
 
-<div class="form_register" ng-app="registerApp" ng-controller="registerController">
-
-    <h2>@ViewData["Title"]</h2>
-
-    <div class="row">
-        <div class="col-md-4">
-            <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
-                <h4>Create a new account.</h4>
-                <hr />
-                <div asp-validation-summary="All" class="text-danger"></div>
-
-                <div class="form-group" ng-hide="true">
-                    <label asp-for="Input.Step"></label>
-                    <input asp-for="Input.Step" class="form-control" ng-model="step"/>
-                    <span asp-validation-for="Input.Step" class="text-danger"></span>
-                </div>
-
-                <div class="form-group">
-                    <label asp-for="Input.Name"></label>
-                    <input asp-for="Input.Name" class="form-control" />
-                    <span asp-validation-for="Input.Name" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Input.UserRole"></label>
-                    <input asp-for="Input.UserRole" class="form-control" />
-                    <span asp-validation-for="Input.UserRole" class="text-danger"></span>
-                </div>
-                
-                <div class="form-group">
-                    <label asp-for="Input.MobileContact"></label>
-                    <input asp-for="Input.MobileContact" class="form-control" />
-                    <span asp-validation-for="Input.MobileContact" class="text-danger"></span>
-                </div>
-
-                <div class="form-group">
-                    <label asp-for="Input.Email"></label>
-                    <input asp-for="Input.Email" class="form-control" />
-                    <span asp-validation-for="Input.Email" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Input.Password"></label>
-                    <input asp-for="Input.Password" class="form-control" />
-                    <span asp-validation-for="Input.Password" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Input.ConfirmPassword"></label>
-                    <input asp-for="Input.ConfirmPassword" class="form-control" />
-                    <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
-                </div>
-                <button type="submit" class="btn btn-default">Register</button> 
-
-
-            </form>
+    <div class="box-form">
+        <div class="left">
+            <div class="overlay">
+                <img src="~/images/navy_logo.png" alt="ASP.NET" class="img-responsive img-logo-login" />
+                <h1 class="login-title">
+                    ELETRICAL AND ELECTRONICS MAINTENANCE SYSTEM
+                </h1>
+            </div>
         </div>
+
+
+        <div class="right">
+            <div class="form_register" ng-app="registerApp" ng-controller="registerController">
+                <h2>@ViewData["Title"]</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                            <hr />
+                            <div asp-validation-summary="All" class="text-danger"></div>
+                            <div class="form-group" ng-hide="true">
+                                <label asp-for="Input.Step"></label>
+                                <input asp-for="Input.Step" class="form-control" ng-model="step" />
+                                <span asp-validation-for="Input.Step" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Input.Name"></label>
+                                <input asp-for="Input.Name" class="form-control" />
+                                <span asp-validation-for="Input.Name" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Input.UserRole"></label>
+                                <input asp-for="Input.UserRole" class="form-control" />
+                                <span asp-validation-for="Input.UserRole" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="Input.MobileContact"></label>
+                                <input asp-for="Input.MobileContact" class="form-control" />
+                                <span asp-validation-for="Input.MobileContact" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Input.Email"></label>
+                                <input asp-for="Input.Email" class="form-control" />
+                                <span asp-validation-for="Input.Email" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Input.Password"></label>
+                                <input asp-for="Input.Password" class="form-control" />
+                                <span asp-validation-for="Input.Password" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Input.ConfirmPassword"></label>
+                                <input asp-for="Input.ConfirmPassword" class="form-control" />
+                                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                            </div>
+                            <button type="submit" class="btn btn-default">Register</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
-</div>
+
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
 }

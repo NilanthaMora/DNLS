@@ -1,0 +1,50 @@
+﻿@model IEnumerable<IdentityExtension.Models.Bill.ElectricityBillType>
+
+@{
+    ViewData["Title"] = "Index";
+    ViewData["Nav"] = "nav";
+}
+
+<div class="container">
+    <div class="card-group">
+        <div class="row">
+            <div class="card col-md-2 equip-col"></div>
+            <div class="card col-md-8 equip-col"><h2 class="head_title">Electricity Bill Type Details</h2></div>
+            <div class="card col-md-2 equip-col back-btn">
+                <a asp-controller="ElectricityBill" asp-action="AccountElectricity" asp-route-id="@ViewBag.menu">
+                    <img src="~/images/back2.png" alt="..." class="img-thumbnail equip-back">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
+<table class="equip_table_admin table table-striped">
+    <thead>
+        <tr>
+            <th class="eq_th_admin">
+                @Html.DisplayNameFor(model => model.billType)
+            </th>
+            <th class="eq_th_admin">
+                @Html.DisplayNameFor(model => model.description)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td class="eq_th_admin">
+                @Html.DisplayFor(modelItem => item.billType)
+            </td>
+            <td class="eq_th_admin">
+                @Html.DisplayFor(modelItem => item.description)
+            </td>
+            <td class="eq_th_admin">
+                <a class="edit" asp-action="Edit" asp-route-id="@item.id">Edit</a> 
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

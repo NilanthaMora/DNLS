@@ -1,0 +1,60 @@
+﻿@model IdentityExtension.Models.Base
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Base</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.code)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.code)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.description)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.description)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.remCd)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.remCd)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.payBase)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.payBase)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.baseType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.baseType)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Area)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Area.id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ShipType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ShipType.id)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

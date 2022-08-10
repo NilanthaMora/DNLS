@@ -1,0 +1,105 @@
+﻿@model IdentityExtension.Models.CCTV
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>CCTV</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.location)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.location)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.dateInstalled)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.dateInstalled)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.dateModified)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.dateModified)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.systemType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.systemType)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.systemId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.systemId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.channels)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.channels)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.noOfCameras)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.noOfCameras)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.noOfDisplays)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.noOfDisplays)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.noOfHdd)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.noOfHdd)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.typeOfCameras)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.typeOfCameras)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.typeOfDisplays)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.typeOfDisplays)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.typeOfHdd)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.typeOfHdd)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.typeOfPeriod)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.typeOfPeriod)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Equipment)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Equipment.srNo)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="id" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

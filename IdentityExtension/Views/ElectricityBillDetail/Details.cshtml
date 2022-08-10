@@ -1,0 +1,132 @@
+﻿@model IdentityExtension.Models.Bill.ElectricityBillDetail
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ElectricityBillDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.billType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.billType)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.year)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.year)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.month)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.month)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.lastMonth)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.lastMonth)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.currentMonth)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.currentMonth)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.unit)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.unit)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.chargePerUnit)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.chargePerUnit)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.departmentCharge)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.departmentCharge)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.fixedCharges)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.fixedCharges)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.monthlyCost)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.monthlyCost)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.billConfirm)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.billConfirm)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.createdDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.createdDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.userId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.userId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.editDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.editDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.editUserId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.editUserId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.billConUserId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.billConUserId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.billConDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.billConDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.adfRefer)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.adfRefer)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.adfDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.adfDate)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.eleAccId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

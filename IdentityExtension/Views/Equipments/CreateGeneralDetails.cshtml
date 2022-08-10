@@ -1,0 +1,139 @@
+﻿@model IEnumerable<IdentityExtension.Models.Equipment>
+
+@{
+    ViewData["Title"] = "CreateGeneralDetails";
+    ViewData["Nav"] = "nav";
+    string eq = @ViewBag.eq;
+    var i = 0;
+}
+
+<div class="container">
+    <div class="card-group">
+        <div class="row">
+            <div class="card col-md-2 equip-col"></div>
+            <div class="card col-md-8 equip-col"><h2 class="head_title">@ViewBag.eq Details</h2></div>
+            <div class="card col-md-2 equip-col back-btn">
+                <a asp-controller="EquipmentViewManagement" asp-action="ViewIndexMenu" asp-route-id="general">
+                    <img src="~/images/back2.png" alt="..." class="img-thumbnail equip-back">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
+<table class="equip_table_admin table table-striped">
+    <thead>
+        <tr>
+            <th class="eq_th_admin">
+            </th>
+            <th class="eq_th_admin">
+                @Html.DisplayNameFor(model => model.srNo) -
+                @ViewBag.eq
+            </th>
+            <th class="eq_th_admin">
+                @Html.DisplayNameFor(model => model.make)
+            </th>
+            <th class="eq_th_admin">
+                @Html.DisplayNameFor(model => model.model)
+            </th>
+            <th class="eq_th_admin">
+                @Html.DisplayNameFor(model => model.state)
+            </th>
+            <th class="eq_th_admin">
+                @Html.DisplayNameFor(model => model.remarks)
+            </th>
+            @if (eq.Equals("engine"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayNameFor(model => model.Engine.powerRating)
+                </th>
+            }
+            @if (eq.Equals("radar"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayNameFor(model => model.Radar.power)
+                </th>
+            }
+            @if (eq.Equals("communication"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayNameFor(model => model.Communication.freqBand)
+                </th>
+                <th class="eq_th_admin">
+                    @Html.DisplayNameFor(model => model.Communication.type)
+                </th>
+            }
+            @if (eq.Equals("weapon"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayNameFor(model => model.Weapon.Ammunition.description)
+                </th>
+            }
+            @if (eq.Equals("satPhone"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayNameFor(model => model.SatPhone.type)
+                </th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            i = i + 1;
+        <tr>
+            <td class="eq_th_admin">
+                @i
+            </td>
+            <td class="eq_th_admin">
+                @Html.DisplayFor(modelItem => item.srNo)
+            </td>
+            <td class="eq_th_admin">
+                @Html.DisplayFor(modelItem => item.make)
+            </td>
+            <td class="eq_th_admin">
+                @Html.DisplayFor(modelItem => item.model)
+            </td>
+            <td class="eq_th_admin">
+                @Html.DisplayFor(modelItem => item.state)
+            </td>
+            <td class="eq_th_admin">
+                @Html.DisplayFor(modelItem => item.remarks)
+            </td>
+            @if (eq.Equals("engine"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayFor(modelItem => item.Engine.powerRating)
+                </th>
+            }
+            @if (eq.Equals("radar"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayFor(modelItem => item.Radar.power)
+                </th>
+            }
+            @if (eq.Equals("communication"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayFor(modelItem => item.Communication.freqBand)
+                </th>
+                <th class="eq_th_admin">
+                    @Html.DisplayFor(modelItem => item.Communication.type)
+                </th>
+            }
+            @if (eq.Equals("weapon"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayFor(modelItem => item.Weapon.Ammunition.description)
+                </th>
+            }
+            @if (eq.Equals("satPhone"))
+            {
+                <th class="eq_th_admin">
+                    @Html.DisplayFor(modelItem => item.SatPhone.type)
+                </th>
+            }
+        </tr>
+        }
+    </tbody>
+</table>

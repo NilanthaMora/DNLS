@@ -1,0 +1,1984 @@
+﻿@model IEnumerable<IdentityExtension.Models.Equipment>
+
+@{
+    ViewData["Title"] = "ShipEquipments";
+    ViewData["Nav"] = "nav";
+}
+
+<div class="container">
+    <div class="card-group">
+        <div class="row">
+            <div class="card col-md-2 equip-col"></div>
+            <div class="card col-md-8 equip-col"><h2 class="head_title">Total Equipment Details Of Ship</h2></div>
+            <div class="card col-md-2 equip-col back-btn">
+                <a asp-controller="ShipType" asp-action="ShipType">
+                    <img src="~/images/back2.png" alt="..." class="img-thumbnail equip-back">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
+
+    <div class="container">
+        <ul class="nav nav-pills">
+            <li class="active"><a data-toggle="pill" href="#engine">Engine</a></li>
+            <li><a data-toggle="pill" href="#radar">Radar</a></li>
+            <li><a data-toggle="pill" href="#gyro">Gyro</a></li>
+            <li><a data-toggle="pill" href="#generator">Generator</a></li>
+            <li><a data-toggle="pill" href="#communication">Communication</a></li>
+            <li><a data-toggle="pill" href="#weapon">Weapon System</a></li>
+            <li><a data-toggle="pill" href="#sonar">Sonar and Echo Sounder</a></li>
+            <li><a data-toggle="pill" href="#gps">GPS</a></li>
+            <li><a data-toggle="pill" href="#guncom">Guncom</a></li>
+            <li><a data-toggle="pill" href="#sensor">Integrated Heading Sensor</a></li>
+            <li><a data-toggle="pill" href="#epirb">EPIRB</a></li>
+            <li><a data-toggle="pill" href="#dvr">DVR</a></li>
+            <li><a data-toggle="pill" href="#cctv">CCTV</a></li>
+            <li><a data-toggle="pill" href="#ais">EODs</a></li>
+            <li><a data-toggle="pill" href="#ais">Sat Compass</a></li>
+            <li><a data-toggle="pill" href="#ais">Sat Phone</a></li>
+            <li><a data-toggle="pill" href="#dvr">SART</a></li>
+            <li><a data-toggle="pill" href="#dvr">Speed Log</a></li>
+            <li><a data-toggle="pill" href="#dvr">Anemometers</a></li>
+            <li><a data-toggle="pill" href="#dvr">Xenon Search Light</a></li>
+            <li><a data-toggle="pill" href="#dvr">NAVTEX Receiver</a></li>
+            <li><a data-toggle="pill" href="#dvr">Mini Sat</a></li>
+            <li><a data-toggle="pill" href="#dvr">ECDIs</a></li>
+        </ul>
+        <div class="tab-content">
+            <div id="engine" class="tab-pane fade in active">
+                <table class="equip_table_admin table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.srNo)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.make)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.model)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Engine.powerRating)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.state)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Engine.dateInstalled)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.remarks)
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model) {
+                            if(item.Engine == null){
+                        <tr>
+                            <td class="eq_th_admin" colspan="7">
+                                No data available
+                            </td>
+                        </tr>
+                            }
+                            if(item.Engine != null){
+                        <tr>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.srNo)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.make)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.model)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Engine.powerRating)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.state)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Engine.dateInstalled)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.remarks)
+                            </td>
+
+                        </tr>
+                        }
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div id="radar" class="tab-pane fade">
+                <table class="equip_table_admin table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.srNo)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.make)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.model)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.state)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.remarks)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Radar.location)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Radar.dateInstalled)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Radar.dingyRange)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Radar.trawlerRange)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Radar.ipcRange)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Radar.facRange)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Radar.fgbRange)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Radar.runningHours)
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model) {
+                            if(item.Radar == null){
+                        <tr>
+                            <td class="eq_th_admin" colspan="13">
+                                No data available
+                            </td>
+                        </tr>
+                            }
+                            if(item.Radar != null){
+                        <tr>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.srNo)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.make)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.model)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.state)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.remarks)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Radar.location)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Radar.dateInstalled)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Radar.dingyRange)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Radar.trawlerRange)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Radar.ipcRange)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Radar.facRange)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Radar.fgbRange)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Radar.runningHours)
+                            </td>
+                        </tr>
+                        }
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div id="gyro" class="tab-pane fade">
+                <table class="equip_table_admin table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.srNo)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.make)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.model)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.state)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.remarks)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Gyro.location)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Gyro.interfaceUsed)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Gyro.dateInstalled)
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model) {
+                            if(item.Gyro == null){
+                        <tr>
+                            <td class="eq_th_admin" colspan="8">
+                                No data available
+                            </td>
+                        </tr>
+                            }
+                            if(item.Gyro != null){
+                        <tr>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.srNo)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.make)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.model)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.state)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.remarks)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Gyro.location)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Gyro.interfaceUsed)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Gyro.dateInstalled)
+                            </td>
+                        </tr>
+                        }
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div id="communication" class="tab-pane fade">
+                <table class="equip_table_admin table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.srNo)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.make)
+                            </th>
+                            <th class="eq_th_admin"
+                                @Html.DisplayNameFor(model => model.model)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.state)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Communication.freqBand)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Communication.powerOp)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Communication.location)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Communication.security)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Communication.type)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Communication.dateInstalled)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.remarks)
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model) {
+                            if(item.Communication == null){
+                        <tr>
+                            <td class="eq_th_admin" colspan="14">
+                                No data available
+                            </td>
+                        </tr>
+                            }
+                            if(item.Communication != null){
+                        <tr>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.srNo)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.make)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.model)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.state)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Communication.freqBand)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Communication.powerOp)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Communication.location)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Communication.security)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Communication.type)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Communication.dateInstalled)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.remarks)
+                            </td>
+                        </tr>
+                        }
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div id="generator" class="tab-pane fade">
+                <table class="equip_table_admin table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.srNo)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.make)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.model)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.state)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.remarks)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Generator.mountedAt)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Generator.kva)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Generator.voltage)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Generator.phase)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Generator.frequancy)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Generator.alternatorModel)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Generator.alternatorMake)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Generator.alternatorSrno)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Generator.primemoverModel)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Generator.primemoverMake)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Generator.primemoverSrno)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Generator.mrh)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Generator.totalRunHours)
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model) {
+                            if(item.Generator == null){
+                        <tr>
+                            <td class="eq_th_admin" colspan="18">
+                                No data available
+                            </td>
+                        </tr>
+                            }
+                            if(item.Generator != null){
+                        <tr>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.srNo)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.make)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.model)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.state)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.remarks)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Generator.mountedAt)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Generator.kva)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Generator.voltage)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Generator.phase)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Generator.frequancy)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Generator.alternatorModel)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Generator.alternatorMake)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Generator.alternatorSrno)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Generator.primemoverModel)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Generator.primemoverMake)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Generator.primemoverSrno)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Generator.mrh)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Generator.totalRunHours)
+                            </td>
+                        </tr>
+                        }
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div id="weapon" class="tab-pane fade">
+                <table class="equip_table_admin table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.srNo)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.make)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.model)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.state)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.remarks)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Weapon.location)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Weapon.outputPower)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Weapon.dateInstalled)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Weapon.Ammunition.description)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Weapon.CanonType.description)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Weapon.Country.description)
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model) {
+                            if(item.Weapon == null){
+                        <tr>
+                            <td class="eq_th_admin" colspan="11">
+                                No data available
+                            </td>
+                        </tr>
+                            }
+                            if(item.Weapon != null){
+                        <tr>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.srNo)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.make)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.model)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.state)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.remarks)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Weapon.location)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Weapon.outputPower)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Weapon.dateInstalled)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Weapon.Ammunition.description)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Weapon.CanonType.description)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Weapon.Country.description)
+                            </td>
+                        </tr>
+                        }
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div id="sonar" class="tab-pane fade">
+                <table class="equip_table_admin table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.srNo)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.make)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.model)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.state)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.remarks)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Sonar.location)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Sonar.typeOfTransducer)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Sonar.dateInstalled)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Sonar.dateInstalled)
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model) {
+                            if(item.Sonar == null){
+                        <tr>
+                            <td class="eq_th_admin" colspan="14">
+                                No data available
+                            </td>
+                        </tr>
+                            }
+                            if(item.Sonar != null){
+                        <tr>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.srNo)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.make)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.model)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.state)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.remarks)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Sonar.location)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Sonar.typeOfTransducer)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Sonar.dateInstalled)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Sonar.dateInstalled)
+                            </td>
+                        </tr>
+                        }
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div id="gps" class="tab-pane fade">
+                <table class="equip_table_admin table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.srNo)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.make)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.model)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.state)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.remarks)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Gps.location)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Gps.dateInstalled)
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model) {
+                            if(item.Gps == null){
+                        <tr>
+                            <td class="eq_th_admin" colspan="7">
+                                No data available
+                            </td>
+                        </tr>
+                            }
+                            if(item.Gps != null){
+                        <tr>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.srNo)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.make)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.model)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.state)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.remarks)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Gps.location)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Gps.dateInstalled)
+                            </td>
+                        </tr>
+                        }
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div id="guncom" class="tab-pane fade">
+                <table class="equip_table_admin table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.srNo)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.make)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.model)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.state)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.remarks)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Guncom.location)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Guncom.dateInstalled)
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model) {
+                            if(item.Guncom == null){
+                        <tr>
+                            <td class="eq_th_admin" colspan="7">
+                                No data available
+                            </td>
+                        </tr>
+                            }
+                            if(item.Guncom != null){
+                        <tr>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.srNo)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.make)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.model)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.state)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.remarks)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Guncom.location)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Guncom.dateInstalled)
+                            </td>
+                        </tr>
+                        }
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div id="integratedHeadingSensor" class="tab-pane fade">
+                <table class="equip_table_admin table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.srNo)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.make)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.model)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.state)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.remarks)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.IntegratedHeadingSensor.location)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.IntegratedHeadingSensor.interfaceUsed)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.IntegratedHeadingSensor.dateInstalled)
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model) {
+                            if(item.IntegratedHeadingSensor == null){
+                        <tr>
+                            <td class="eq_th_admin" colspan="8">
+                                No data available
+                            </td>
+                        </tr>
+                            }
+                            if(item.IntegratedHeadingSensor != null){
+                        <tr>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.srNo)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.make)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.model)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.state)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.remarks)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.IntegratedHeadingSensor.location)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.IntegratedHeadingSensor.interfaceUsed)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.IntegratedHeadingSensor.dateInstalled)
+                            </td>
+                        </tr>
+                        }
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div id="ais" class="tab-pane fade">
+                <table class="equip_table_admin table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.srNo)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.make)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.model)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.state)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.remarks)
+                            </th>
+                            <th class="eq_th_admin"> 
+                                @Html.DisplayNameFor(model => model.Ais.location)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Ais.freqBand)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Ais.powerOp)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Ais.security)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Ais.type)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Ais.maxDetectRange)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Ais.antennaHeight)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Ais.dateInstalled)
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model) {
+                            if(item.Ais == null){
+                        <tr>
+                            <td class="eq_th_admin" colspan="13">
+                                No data available
+                            </td>
+                        </tr>
+                            }
+                            if(item.Ais != null){
+                        <tr>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.srNo)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.make)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.model)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.state)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.remarks)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Ais.location)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Ais.freqBand)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Ais.powerOp)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Ais.security)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Ais.type)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Ais.maxDetectRange)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Ais.antennaHeight)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Ais.antennaHeight)
+                            </td>
+                        </tr>
+                        }
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div id="epirb" class="tab-pane fade">
+                <table class="equip_table_admin table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.srNo)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.make)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.model)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.state)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.remarks)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Epirb.location)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Epirb.mmsiReg)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Epirb.hruRepDate)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Epirb.batteryExpDate)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Epirb.dateInstalled)
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model) {
+                            if(item.Epirb == null){
+                        <tr>
+                            <td class="eq_th_admin" colspan="10">
+                                No data available
+                            </td>
+                        </tr>
+                            }
+                            if(item.Epirb != null){
+                        <tr>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.srNo)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.make)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.model)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.state)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.remarks)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Epirb.location)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Epirb.mmsiReg)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Epirb.hruRepDate)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Epirb.batteryExpDate)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Epirb.dateInstalled)
+                            </td>
+                        </tr>
+                        }
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div id="dvr" class="tab-pane fade">
+                <table class="equip_table_admin table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.srNo)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.make)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.model)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.state)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.remarks)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.DVR.location)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.DVR.dvrSubmitType)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.DVR.dvrSubmitSrno)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.DVR.dvrSubmitState)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.DVR.dvrSubmitMake)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.DVR.dvrSubmitModel)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.DVR.dateInstalled)
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model) {
+                            if(item.DVR == null){
+                        <tr>
+                            <td class="eq_th_admin" colspan="12">
+                                No data available
+                            </td>
+                        </tr>
+                            }
+                            if(item.DVR != null){
+                        <tr>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.srNo)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.make)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.model)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.state)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.remarks)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.DVR.location)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.DVR.dvrSubmitType)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.DVR.dvrSubmitSrno)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.DVR.dvrSubmitState)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.DVR.dvrSubmitMake)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.DVR.dvrSubmitModel)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.DVR.dateInstalled)
+                            </td>
+                        </tr>
+                        }
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div id="cctv" class="tab-pane fade">
+                <table class="equip_table_admin table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.srNo)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.make)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.model)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.state)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.remarks)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.CCTV.location)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.CCTV.dateInstalled)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.CCTV.systemType)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.CCTV.channels)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.CCTV.noOfCameras)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.CCTV.noOfDisplays)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.CCTV.noOfHdd)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.CCTV.typeOfCameras)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.CCTV.typeOfDisplays)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.CCTV.typeOfHdd)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.CCTV.typeOfPeriod)
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model) {
+                            if(item.CCTV == null){
+                        <tr>
+                            <td class="eq_th_admin" colspan="16">
+                                No data available
+                            </td>
+                        </tr>
+                            }
+                            if(item.CCTV != null){
+                        <tr>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.srNo)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.make)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.model)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.state)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.remarks)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.CCTV.location)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.CCTV.dateInstalled)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.CCTV.systemType)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.CCTV.channels)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.CCTV.noOfCameras)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.CCTV.noOfDisplays)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.CCTV.noOfHdd)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.CCTV.typeOfCameras)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.CCTV.typeOfDisplays)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.CCTV.typeOfHdd)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.CCTV.typeOfPeriod)
+                            </td>
+                        </tr>
+                        }
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div id="eods" class="tab-pane fade">
+                <table class="equip_table_admin table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.srNo)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.make)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.model)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.state)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.remarks)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.EODs.country)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.EODs.dateInstalled)
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model) {
+                            if(item.EODs == null){
+                        <tr>
+                            <td class="eq_th_admin" colspan="7">
+                                No data available
+                            </td>
+                        </tr>
+                            }
+                            if(item.EODs != null){
+                        <tr>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.srNo)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.make)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.model)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.state)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.remarks)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.EODs.country)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.EODs.dateInstalled)
+                            </td>
+                        </tr>
+                        }
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div id="satCompass" class="tab-pane fade">
+                <table class="equip_table_admin table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.srNo)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.make)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.model)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.state)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.remarks)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.SatCompass.location)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.SatCompass.dateInstalled)
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model) {
+                            if(item.SatCompass == null){
+                        <tr>
+                            <td class="eq_th_admin" colspan="7">
+                                No data available
+                            </td>
+                        </tr>
+                            }
+                            if(item.SatCompass != null){
+                        <tr>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.srNo)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.make)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.model)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.state)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.remarks)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.SatCompass.location)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.SatCompass.dateInstalled)
+                            </td>
+                        </tr>
+                        }
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div id="satPhone" class="tab-pane fade">
+                <table class="equip_table_admin table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.srNo)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.make)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.model)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.state)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.remarks)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.SatPhone.location)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.SatPhone.inSNo)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.SatPhone.voice)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.SatPhone.fax)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.SatPhone.email)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.SatPhone.dataLimit)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.SatPhone.type)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.SatPhone.dateInstalled)
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model) {
+                            if(item.SatPhone == null){
+                        <tr>
+                            <td class="eq_th_admin" colspan="13">
+                                No data available
+                            </td>
+                        </tr>
+                            }
+                            if(item.SatPhone != null){
+                        <tr>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.srNo)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.make)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.model)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.state)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.remarks)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.SatPhone.location)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.SatPhone.inSNo)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.SatPhone.voice)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.SatPhone.fax)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.SatPhone.email)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.SatPhone.dataLimit)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.SatPhone.type)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.SatPhone.dateInstalled)
+                            </td>
+                        </tr>
+                        }
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div id="sart" class="tab-pane fade">
+                <table class="equip_table_admin table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.srNo)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.make)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.model)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.state)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.remarks)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Sart.location)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Sart.outputPower)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Sart.dateInstalled)
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model) {
+                            if(item.Sart == null){
+                        <tr>
+                            <td class="eq_th_admin" colspan="8">
+                                No data available
+                            </td>
+                        </tr>
+                            }
+                            if(item.Sart != null){
+                        <tr>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.srNo)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.make)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.model)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.state)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.remarks)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Sart.location)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Sart.outputPower)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Sart.dateInstalled)
+                            </td>
+                        </tr>
+                        }
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div id="speedLog" class="tab-pane fade">
+                <table class="equip_table_admin table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.srNo)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.make)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.model)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.state)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.remarks)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.SpeedLog.location)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.SpeedLog.outputPower)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.SpeedLog.dateInstalled)
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model) {
+                            if(item.SpeedLog == null){
+                        <tr>
+                            <td class="eq_th_admin" colspan="8">
+                                No data available
+                            </td>
+                        </tr>
+                            }
+                            if(item.SpeedLog != null){
+                        <tr>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.srNo)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.make)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.model)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.state)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.remarks)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.SpeedLog.location)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.SpeedLog.outputPower)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.SpeedLog.dateInstalled)
+                            </td>
+                        </tr>
+                        }
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div id="anemometers" class="tab-pane fade">
+                <table class="equip_table_admin table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.srNo)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.make)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.model)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.state)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.remarks)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Anemometers.location)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Anemometers.outputPower)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Anemometers.dateInstalled)
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model) {
+                            if(item.Anemometers == null){
+                        <tr>
+                            <td class="eq_th_admin" colspan="8">
+                                No data available
+                            </td>
+                        </tr>
+                            }
+                            if(item.Anemometers != null){
+                        <tr>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.srNo)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.make)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.model)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.state)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.remarks)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Anemometers.location)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Anemometers.outputPower)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Anemometers.dateInstalled)
+                            </td>
+                        </tr>
+                        }
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div id="xenonSearchLight" class="tab-pane fade">
+                <table class="equip_table_admin table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.srNo)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.make)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.model)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.state)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.remarks)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.XenonSLight.location)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.XenonSLight.outputPower)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.XenonSLight.dateInstalled)
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model) {
+                            if(item.XenonSLight == null){
+                        <tr>
+                            <td class="eq_th_admin" colspan="8">
+                                No data available
+                            </td>
+                        </tr>
+                            }
+                            if(item.XenonSLight != null){
+                        <tr>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.srNo)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.make)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.model)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.state)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.remarks)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.XenonSLight.location)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.XenonSLight.outputPower)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.XenonSLight.dateInstalled)
+                            </td>
+                        </tr>
+                        }
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div id="navtex" class="tab-pane fade">
+                <table class="equip_table_admin table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.srNo)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.make)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.model)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.state)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.remarks)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Navtex.location)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.Navtex.dateInstalled)
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model) {
+                            if(item.Navtex == null){
+                        <tr>
+                            <td class="eq_th_admin" colspan="7">
+                                No data available
+                            </td>
+                        </tr>
+                            }
+                            if(item.Navtex != null){
+                        <tr>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.srNo)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.make)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.model)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.state)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.remarks)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Navtex.location)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.Navtex.dateInstalled)
+                            </td>
+                        </tr>
+                        }
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div id="miniSat" class="tab-pane fade">
+                <table class="equip_table_admin table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.srNo)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.make)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.model)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.state)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.remarks)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.MiniSat.location)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.MiniSat.dateInstalled)
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model) {
+                            if(item.MiniSat == null){
+                        <tr>
+                            <td class="eq_th_admin" colspan="7">
+                                No data available
+                            </td>
+                        </tr>
+                            }
+                            if(item.MiniSat != null){
+                        <tr>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.srNo)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.make)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.model)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.state)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.remarks)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.MiniSat.location)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.MiniSat.dateInstalled)
+                            </td>
+                        </tr>
+                        }
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div id="ecdis" class="tab-pane fade">
+                <table class="equip_table_admin table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.srNo)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.make)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.model)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.state)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.remarks)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.ECDI.location)
+                            </th>
+                            <th class="eq_th_admin">
+                                @Html.DisplayNameFor(model => model.ECDI.dateInstalled)
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model) {
+                            if(item.ECDI == null){
+                        <tr>
+                            <td class="eq_th_admin" colspan="7">
+                                No data available
+                            </td>
+                        </tr>
+                            }
+                            if(item.ECDI != null){
+                        <tr>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.srNo)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.make)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.model)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.state)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.remarks)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.ECDI.location)
+                            </td>
+                            <td class="eq_th_admin">
+                                @Html.DisplayFor(modelItem => item.ECDI.dateInstalled)
+                            </td>
+                        </tr>
+                        }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>

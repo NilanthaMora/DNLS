@@ -1,0 +1,81 @@
+﻿@model IdentityExtension.Models.Bill.ElectricityAccountBill
+
+@{
+    ViewData["Title"] = "Edit";
+    ViewData["Nav"] = "nav";
+}
+
+<div class="container">
+    <div class="card-group">
+        <div class="row">
+            <div class="card col-md-2 equip-col"></div>
+            <div class="card col-md-8 equip-col"><h2 class="head_title">Edit Electricity Account Bill</h2></div>
+            <div class="card col-md-2 equip-col back-btn">
+                <a asp-controller="ElectricityBill" asp-action="AccountElectricity">
+                    <img src="~/images/back2.png" alt="..." class="img-thumbnail equip-back">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
+<div class="row form-background">
+    <div class="col-md-12 form-body">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="billAccId" />
+            <div class="form-group">
+                <label asp-for="billType" class="control-label"></label>
+                <select asp-for="billType" class="form-control" asp-items="ViewBag.billType"></select>
+                <span asp-validation-for="billType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="areaId" class="control-label"></label>
+                <select asp-for="areaId" class="form-control" asp-items="ViewBag.areaId"></select>
+                <span asp-validation-for="areaId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="baseId" class="control-label"></label>
+                <input asp-for="baseId" class="form-control" />
+                <span asp-validation-for="baseId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="subUnitId" class="control-label"></label>
+                <input asp-for="subUnitId" class="form-control" />
+                <span asp-validation-for="subUnitId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="accountNumber" class="control-label"></label>
+                <input asp-for="accountNumber" class="form-control" />
+                <span asp-validation-for="accountNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="capacity" class="control-label"></label>
+                <input asp-for="capacity" class="form-control" />
+                <span asp-validation-for="capacity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="active" /> @Html.DisplayNameFor(model => model.active)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="createdDate" class="control-label"></label>
+                <input asp-for="createdDate" class="form-control" />
+                <span asp-validation-for="createdDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="userId" class="control-label"></label>
+                <input asp-for="userId" class="form-control" />
+                <span asp-validation-for="userId" class="text-danger"></span>
+            </div>
+            <div class="form-group submit-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+

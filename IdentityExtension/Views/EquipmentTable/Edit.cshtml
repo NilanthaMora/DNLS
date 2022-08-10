@@ -5,12 +5,10 @@
     ViewData["Nav"] = "nav";
 }
 
-<h2>Edit</h2>
-
-<h4>Equipment_Table</h4>
+<h4 class="page-title">Equipment_Table</h4>
 <hr />
-<div class="row">
-    <div class="col-md-4">
+<div class="row form-background">
+    <div class="col-md-12 form-body">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="id" />
@@ -23,6 +21,11 @@
                 <label asp-for="equipment" class="control-label"></label>
                 <input asp-for="equipment" class="form-control" />
                 <span asp-validation-for="equipment" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="varName" class="control-label"></label>
+                <input asp-for="varName" class="form-control" />
+                <span asp-validation-for="varName" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="equipmentSellCode" class="control-label"></label>
@@ -39,15 +42,11 @@
                 <input asp-for="equipmentGeneralInq" class="form-control" />
                 <span asp-validation-for="equipmentGeneralInq" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group submit-group">
                 <input type="submit" value="Save" class="btn btn-default" />
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

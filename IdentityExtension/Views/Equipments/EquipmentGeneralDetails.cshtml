@@ -1,0 +1,95 @@
+﻿@model IdentityExtension.Models.ViewModels.GeneralInquire
+@{
+    ViewData["Title"] = "Index";
+    ViewData["Nav"] = "nav";
+    string eq = ViewData["eq"].ToString();  
+}
+
+<div class="container">
+    <div class="card-group">
+        <div class="row title-row">
+            <div class="card col-md-2 equip-col"></div>
+            <div class="card col-md-8 equip-col"><h2 class="head_title">Equipment Details - Generaly</h2></div> 
+            <div class="card col-md-2 equip-col back-btn">
+                <a asp-controller="EquipmentViewManagement" asp-action="ViewIndexMenu" asp-route-id="general">
+                    <img src="~/images/back2.png" alt="..." class="img-thumbnail equip-back"> 
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
+
+<div class="row form-background">
+    <div class="col-md-12 form-body">
+        <form asp-controller="Equipments" asp-action="general">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="equipmet" value=@eq />     
+            <div class="form-group">
+                <label asp-for="area" class="control-label"></label>
+                <select asp-for="area" class="form-control" asp-items="ViewBag.area"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="eqBase" class="control-label"></label>
+                <select asp-for="eqBase" class="form-control" asp-items="ViewBag.eqBase"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="make" class="control-label"></label>
+                <select asp-for="make" class="form-control" asp-items="ViewBag.make"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="model" class="control-label"></label>
+                <select asp-for="model" class="form-control" asp-items="ViewBag.model"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="status" class="control-label"></label>
+                <select asp-for="status" class="form-control" asp-items="ViewBag.equipStatus"></select>
+            </div>
+            @if (eq.Equals("engine"))
+            {
+                <div class="form-group">
+                    <label asp-for="power" class="control-label"></label>
+                    <select asp-for="power" class="form-control" asp-items="ViewBag.powerRatingEngine"></select>
+                </div>
+            }
+            @if (eq.Equals("radar"))
+            {
+                <div class="form-group">
+                    <label asp-for="power" class="control-label"></label>
+                    <select asp-for="power" class="form-control" asp-items="ViewBag.powerRatingRadar"></select>
+                </div>
+            }
+            @if (eq.Equals("communication"))
+            {
+                <div class="form-group">
+                    <label asp-for="frequency" class="control-label"></label>
+                    <select asp-for="frequency" class="form-control" asp-items="ViewBag.freqBand"></select>
+                </div>
+            }
+            @if (eq.Equals("communication"))
+            {
+                <div class="form-group">
+                    <label asp-for="type" class="control-label"></label>
+                    <select asp-for="type" class="form-control" asp-items="ViewBag.typeCom"></select>
+                </div>
+            }
+            @if (eq.Equals("satPhone"))
+            {
+                <div class="form-group">
+                    <label asp-for="type" class="control-label"></label>
+                    <select asp-for="type" class="form-control" asp-items="ViewBag.typeSPhone"></select>
+                </div>
+            }
+            @if (eq.Equals("weapon"))
+            {
+                <div class="form-group">
+                    <label asp-for="ammunitionRange" class="control-label"></label>
+                    <select asp-for="ammunitionRange" class="form-control" asp-items="ViewBag.range"></select>
+                </div>
+            }
+            <div class="form-group submit-group">
+                <input type="submit" value="Create" class="btn-form" />
+            </div>
+        </form>
+    </div>
+</div>

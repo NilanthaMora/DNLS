@@ -5,9 +5,9 @@
 
 <div class="form_home">
     <br />
-    <div class="container">
+    <div class="container container-home">
         <div class="card-group">
-            <div class="row">
+            <div class="row home-row">
                 <div class="card text-center col-md-4 home-grid-col">
                     <div class="card home-grid-card">
                         <img src="~/images/equipment2.jpg" class="card-img-top home-grid-img" alt="...">
@@ -25,7 +25,7 @@
                         <div class="card-body home-grid-card-body">
                             <h5 class="card-title home-grid-title">PROCUREMENT MANAGEMENT</h5>
                             <p class="card-text home-grid-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a asp-controller="ProcumentManagement" asp-action="Index" class="btn btn-primary home-grid-btn">Select</a>
+                            <a asp-controller="ProcurementManagement" asp-action="Index" class="btn btn-primary home-grid-btn">Select</a>
                         </div>
                     </div>
                 </div>
@@ -36,7 +36,23 @@
                         <div class="card-body home-grid-card-body">
                             <h5 class="card-title home-grid-title">ELECTRICAL/FUEL BILL</h5>
                             <p class="card-text home-grid-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary home-grid-btn">Select</a>
+                            <a asp-controller="BillManagement" asp-action="Index" class="btn btn-primary home-grid-btn">Select</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container container-home">
+        <div class="card-group">
+            <div class="row home-row">
+                <div class="card text-center col-md-4 home-grid-col">
+                    <div class="card home-grid-card">
+                        <img src="~/images/base.jpg" class="card-img-top home-grid-img" alt="...">
+                        <div class="card-body home-grid-card-body">
+                            <h5 class="card-title home-grid-title">BASE MANAGEMENT</h5>
+                            <p class="card-text home-grid-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a asp-controller="BaseManagement" asp-action="Index" class="btn btn-primary home-grid-btn">Select</a>
                         </div>
                     </div>
                 </div>

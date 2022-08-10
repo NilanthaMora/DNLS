@@ -1,0 +1,69 @@
+﻿@model IdentityExtension.Models.SpareProcurement
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>SpareProcurement</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.partNo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.partNo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.sbRef)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.sbRef)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.currentStock)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.currentStock)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.firstRate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.firstRate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.secondRate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.secondRate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.thirdRate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.thirdRate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.forthRate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.forthRate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Procurement)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Procurement.id)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="id" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

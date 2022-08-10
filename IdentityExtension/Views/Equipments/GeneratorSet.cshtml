@@ -1,0 +1,563 @@
+﻿@model IEnumerable<IdentityExtension.Models.Generator>
+
+@{
+    ViewData["Title"] = "GeneratorSet";
+    string[] ob = ViewBag.selectedColumn;
+    ViewData["Nav"] = "nav";
+}
+
+<div class="container">
+    <div class="card-group">
+        <div class="row title-row">
+            <div class="card col-md-2 equip-col"></div>
+            <div class="card col-md-8 equip-col"><h2 class="head_title">Generator Details</h2></div>
+            <div class="card col-md-2 equip-col back-btn">
+                <a asp-controller="AreaWice" asp-action="Index">
+                    <img src="~/images/back2.png" alt="..." class="img-thumbnail equip-back">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
+<table class="equip_table_admin table table-striped">
+    <thead>
+        <tr>
+            @{
+                if (ob.Contains("Id"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayNameFor(model => model.Equipment.id)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("Base"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayNameFor(model => model.Equipment.Base.description)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("Mounted_At"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayNameFor(model => model.mountedAt)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("KVA"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayNameFor(model => model.kva)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("Voltage"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayNameFor(model => model.voltage)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("Phase"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayNameFor(model => model.phase)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("Frequancy"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayNameFor(model => model.frequancy)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("Generator_Model"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayNameFor(model => model.Equipment.model)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("Make"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayNameFor(model => model.Equipment.make)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("Date_Modified"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayNameFor(model => model.dateModified)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("Remarks"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayNameFor(model => model.Equipment.remarks)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("User_Id"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayNameFor(model => model.Equipment.userId)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("C_Date"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayNameFor(model => model.Equipment.cDate)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("Generator_Sr_No"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayNameFor(model => model.Equipment.srNo)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("Alternator_Model"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayNameFor(model => model.alternatorModel)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("Alternator_Make"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayNameFor(model => model.alternatorMake)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("Alternator_Sr_No"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayNameFor(model => model.alternatorSrno)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("Action"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayNameFor(model => model.Equipment.action)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("G47_Remarks"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayNameFor(model => model.Equipment.g47Remarks)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("G47_Date"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayNameFor(model => model.Equipment.g47Date)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("Del"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayNameFor(model => model.Equipment.del)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("Del_Date"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayNameFor(model => model.Equipment.delDate)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("Primemover_Model"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayNameFor(model => model.primemoverModel)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("Primemover_Make"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayNameFor(model => model.primemoverMake)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("Primemover_Sr_No"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayNameFor(model => model.primemoverSrno)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("State"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayNameFor(model => model.Equipment.state)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("Total_Run_Hrs"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayNameFor(model => model.totalRunHours)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("M_R_H"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayNameFor(model => model.mrh)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("Full_Load"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayNameFor(model => model.fullLoad)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("Max_Load"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayNameFor(model => model.maxLoad)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("Presentage"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayNameFor(model => model.presentage)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("Ledger_Page_No"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayNameFor(model => model.ledgerPageNo)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("Mode"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayNameFor(model => model.mode)
+                    </th>
+                }
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            @{
+                if (ob.Contains("Id"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayFor(modelItem => item.Equipment.id)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("Base"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayFor(modelItem => item.Equipment.Base.description)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("Mounted_At"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayFor(modelItem => item.mountedAt)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("KVA"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayNameFor(modelItem => item.kva)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("Voltage"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayFor(modelItem => item.voltage)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("Phase"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayFor(modelItem => item.phase)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("Frequancy"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayFor(modelItem => item.frequancy)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("Generator_Model"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayFor(modelItem => item.Equipment.model)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("Make"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayFor(modelItem => item.Equipment.make)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("Date_Modified"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayFor(modelItem => item.dateModified)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("Remarks"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayFor(modelItem => item.Equipment.remarks)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("User_Id"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayFor(modelItem => item.Equipment.userId)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("C_Date"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayFor(modelItem => item.Equipment.cDate)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("Generator_Sr_No"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayFor(modelItem => item.Equipment.srNo)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("Alternator_Model"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayFor(modelItem => item.alternatorModel)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("Alternator_Make"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayFor(modelItem => item.alternatorMake)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("Alternator_Sr_No"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayFor(modelItem => item.alternatorSrno)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("Action"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayFor(modelItem => item.Equipment.action)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("G47_Remarks"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayFor(modelItem => item.Equipment.g47Remarks)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("G47_Date"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayFor(modelItem => item.Equipment.g47Date)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("Del"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayFor(modelItem => item.Equipment.del)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("Del_Date"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayFor(modelItem => item.Equipment.delDate)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("Primemover_Model"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayFor(modelItem => item.primemoverModel)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("Primemover_Make"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayFor(modelItem => item.primemoverMake)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("Primemover_Sr_No"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayFor(modelItem => item.primemoverSrno)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("State"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayFor(modelItem => item.Equipment.state)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("Total_Run_Hrs"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayFor(modelItem => item.totalRunHours)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("M_R_H"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayFor(modelItem => item.mrh)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("Full_Load"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayFor(modelItem => item.fullLoad)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("Max_Load"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayFor(modelItem => item.maxLoad)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("Presentage"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayFor(modelItem => item.presentage)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("Ledger_Page_No"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayFor(modelItem => item.ledgerPageNo)
+                    </th>
+                }
+            }
+            @{
+                if (ob.Contains("Mode"))
+                {
+                    <th class="eq_th_admin">
+                        @Html.DisplayFor(modelItem => item.mode)
+                    </th>
+                }
+            }
+        </tr>
+        }
+    </tbody>
+</table>

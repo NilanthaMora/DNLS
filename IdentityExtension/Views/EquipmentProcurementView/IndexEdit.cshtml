@@ -1,0 +1,102 @@
+﻿@model IEnumerable<IdentityExtension.Models.EquipmentProcurement>
+
+@{
+    ViewData["Title"] = "Index";
+    ViewData["Nav"] = "nav";
+}
+<div class="container">
+    <div class="card-group">
+        <div class="row">
+            <div class="card col-md-2 equip-col"></div>
+            <div class="card col-md-8 equip-col"><h2 class="head_title">Edit Equipment Procurement Details</h2></div>
+            <div class="card col-md-2 equip-col back-btn">
+                <a asp-controller="ProcurementManagement" asp-action="Index">
+                    <img src="~/images/back2.png" alt="..." class="img-thumbnail equip-back">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
+<table class="equip_table_admin table table-striped">
+    <thead>
+        <tr>
+            <th class="eq_th_admin">
+                @Html.DisplayNameFor(model => model.Procurement.make)
+            </th>
+            <th class="eq_th_admin">
+                @Html.DisplayNameFor(model => model.Procurement.model)
+            </th>
+            <th class="eq_th_admin">
+                @Html.DisplayNameFor(model => model.item)
+            </th>
+            <th class="eq_th_admin">
+                @Html.DisplayNameFor(model => model.Procurement.rlRef)
+            </th>
+            <th class="eq_th_admin">
+                @Html.DisplayNameFor(model => model.fileRef)
+            </th>
+            <th class="eq_th_admin">
+                @Html.DisplayNameFor(model => model.Procurement.qtyOrdered)
+            </th>
+            <th class="eq_th_admin">
+                @Html.DisplayNameFor(model => model.Procurement.qtyApproved)
+            </th>
+            <th class="eq_th_admin">
+                @Html.DisplayNameFor(model => model.Procurement.lastPurchasePrice)
+            </th>
+            <th class="eq_th_admin">
+                @Html.DisplayNameFor(model => model.proDistribution)
+            </th>
+            <th class="eq_th_admin">
+                @Html.DisplayNameFor(model => model.Procurement.remarks)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="eq_td_admin">
+                    @Html.DisplayFor(modelItem => item.Procurement.make)
+                </td>
+                <td class="eq_td_admin">
+                    @Html.DisplayFor(modelItem => item.Procurement.model)
+                </td>
+                <td class="eq_td_admin">
+                    @Html.DisplayFor(modelItem => item.item)
+                </td>
+                <td class="eq_td_admin">
+                    @Html.DisplayFor(modelItem => item.Procurement.rlRef)
+                </td>
+                <td class="eq_td_admin">
+                    @Html.DisplayFor(modelItem => item.fileRef)
+                </td>
+                <td class="eq_td_admin">
+                    @Html.DisplayFor(modelItem => item.Procurement.qtyOrdered)
+                </td>
+                <td class="eq_td_admin">
+                    @Html.DisplayFor(modelItem => item.Procurement.qtyApproved)
+                </td>
+                <td class="eq_td_admin">
+                    @Html.DisplayFor(modelItem => item.Procurement.lastPurchasePrice)
+                </td>
+                <td class="eq_td_admin">
+                    @Html.DisplayFor(modelItem => item.proDistribution)
+                </td>
+                <td class="eq_td_admin">
+                    @Html.DisplayFor(modelItem => item.Procurement.remarks)
+                </td>
+                <td class="eq_td_admin">
+                    <a class="edit" asp-action="Edit" asp-route-id="@item.id">Edit</a>
+                    
+                    @if (ViewBag.role == "user")
+                    {
+                    <a class="delete" asp-action="Delete" asp-route-id="@item.id">Delete</a>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

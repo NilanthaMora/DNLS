@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using IdentityExtension.Data;
 using IdentityExtension.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace IdentityExtension.Controllers
 {
+    [Authorize]
     public class EquipmentTableController : Controller
     {
         private readonly DnlDBContext _context;
@@ -65,7 +67,7 @@ namespace IdentityExtension.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("id,equipmentCode,equipment,equipmentSellCode,imageUrl,equipmentGeneralInq")] EquipmentTable equipmentTable)
+        public async Task<IActionResult> Create([Bind("id,equipmentCode,equipment,varName,equipmentSellCode,imageUrl,equipmentGeneralInq")] EquipmentTable equipmentTable)
         {
             if (ModelState.IsValid)
             {
@@ -97,7 +99,7 @@ namespace IdentityExtension.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("id,equipmentCode,equipment,equipmentSellCode,imageUrl,equipmentGeneralInq")] EquipmentTable equipmentTable)
+        public async Task<IActionResult> Edit(int id, [Bind("id,equipmentCode,equipment,varName,equipmentSellCode,imageUrl,equipmentGeneralInq")] EquipmentTable equipmentTable)
         {
             if (id != equipmentTable.id)
             {

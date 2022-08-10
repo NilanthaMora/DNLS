@@ -1,0 +1,63 @@
+﻿@model IdentityExtension.Models.Base
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Base</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.code)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.code)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.description)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.description)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.remCd)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.remCd)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.payBase)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.payBase)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.baseType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.baseType)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Area)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Area.id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ShipType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ShipType.id)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="id" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

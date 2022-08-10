@@ -1,0 +1,107 @@
+﻿@model IEnumerable<IdentityExtension.Models.FuelBillSubDetail>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.year)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.month)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.lastMonth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.chargePerUnit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.totalCharge)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fromDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.toDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.createdDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.userId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.editDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.editUserId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FuelBillAccount)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.month)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.lastMonth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.chargePerUnit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.totalCharge)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fromDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.toDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.createdDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.userId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.editDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.editUserId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FuelBillAccount.billAccId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.fuelAccId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.fuelAccId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.fuelAccId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

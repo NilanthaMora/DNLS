@@ -1,0 +1,87 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    ViewData["Nav"] = "nav";
+}
+<div class="container">
+    <div class="card-group">
+        <div class="row title-row">
+            <div class="card col-md-2 equip-col"></div>
+            <div class="card col-md-8 equip-col"><h2 class="head_title">Consumption of Electricity</h2></div>
+            <div class="card col-md-2 equip-col back-btn">
+                <a asp-controller="ElectricityBill" asp-action="Index">
+                    <img src="~/images/back2.png" alt="..." class="img-thumbnail equip-back">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
+<div class="form_home">
+    <br />
+    <div class="container">
+        <div class="card-group">
+            <div class="row equip-row">
+                <div class="card col-md-4 equip-col">
+                    <div class="card mb-3 equip-card">
+                        <div class="row g-0">
+                            <div class="col-md-12">
+                                <div class="card-body">
+                                    <h5 class="equip-card-title">Electricity Bill</h5>
+                                </div>
+                                <ul>
+                                    <li><a asp-controller="ElectricityBillDetail" asp-action="Create">New Electricity Bill</a></li>
+                                    <li>Edit New Electricity Bill</li>
+                                    <li>Confirm Electricity Bill</li>
+                                    <li>Chargers for Electricity Bill</li>
+                                    <li><a asp-controller="ElectricityBillDetail" asp-action="Index">View Electricity Bill</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card col-md-4 equip-col">
+                    <a asp-controller="FuelBill" asp-action="Index">
+                        <div class="card mb-3 equip-card">
+                            <div class="row g-0">
+                                <div class="col-md-12">
+                                    <div class="card-body">
+                                        <h5 class="equip-card-title">Bulk Supply Bill</h5>
+                                    </div>
+                                    <ul>
+                                        <li>New Electricity Bulk Bill</li>
+                                        <li>Edit New Electricity Bulk Bill</li>
+                                        <li>Confirm Electricity Bulk Bill</li>
+                                        <li>Chargers For Electricity Bulk Bill</li>
+                                        <li>View Electricity Bulk Bill</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="card col-md-4 equip-col">
+                    <a asp-controller="FuelBill" asp-action="Index">
+                        <div class="card mb-3 equip-card">
+                            <div class="row g-0">
+                                <div class="col-md-12">
+                                    <div class="card-body">
+                                        <h5 class="equip-card-title">Domenstic Supply Bill</h5>
+                                    </div>
+                                    <ul>
+                                        <li>New Electricity Domestic Bill</li>
+                                        <li>Edit New Electricity Domestic Bill</li>
+                                        <li>Confirm Electricity Domestic Bill</li>
+                                        <li>View Electricity Domestic Bill</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

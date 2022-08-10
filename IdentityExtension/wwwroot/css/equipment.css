@@ -47,7 +47,7 @@
 }
 
 .equip_table_admin {
-    background-color: #f1f2f2 !important;
+    background-color: #c5e2ed !important;
     width: 100%;
     max-width: 100%;
     margin-bottom: 20px;
@@ -86,3 +86,47 @@
 .equip-row {
     margin-bottom: 2%;
 }
+.equip-back {
+    height: 60px !important;
+    width: 90px;
+    border: none;
+}
+
+
+@media (max-width: 575.98px) {
+}
+
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+}
+
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .equip-row {
+        margin-bottom: 2%;
+        display:flex;
+    }
+    .title-row {
+        display: flex;
+    }
+    .col-md-2 {
+        width: 16.67%
+    }
+    .col-md-8 {
+        width: 66.67%
+    }
+}
+
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .equip-row {
+        margin-bottom: 2%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .equip-row {
+        margin-bottom: 2%;
+    }
+}
+

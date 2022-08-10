@@ -1,0 +1,138 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    ViewData["Nav"] = "nav";
+}
+<div class="container">
+        <div class="card-group">
+            <div class="row title-row">
+                <div class="card col-md-2 equip-col"></div>
+                <div class="card col-md-8 equip-col"><h2 class="head_title">Manage Procurement</h2></div>
+                <div class="card col-md-2 equip-col back-btn"><a asp-controller="Home" asp-action="Index">
+                        <img src="~/images/back2.png" alt="..." class="img-thumbnail equip-back">
+                    </a></div>
+            </div>
+        </div>
+</div>
+<hr />
+<div class="form_home">
+    <br />
+    <div class="container">
+        <div class="card-group">
+            <div class="row equip-row">
+                <div class="card col-md-4 equip-col">
+                    <a asp-controller="EquipmentProcurementView" asp-action="Create">
+                        <div class="card mb-3 equip-card">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="~/images/add.png"
+                                         alt="Trendy Pants and Shoes"
+                                         class="img-fluid rounded-start" />
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="equip-card-title">New Equipment Procurement</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="card col-md-4 equip-col">
+                    <a asp-controller="EquipmentProcurementView" asp-action="IndexEdit">
+                        <div class="card mb-3 equip-card">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="~/images/edit.png"
+                                         alt="Trendy Pants and Shoes"
+                                         class="img-fluid rounded-start" />
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="equip-card-title">Edit Equipment Procurement</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="card col-md-4 equip-col">
+                    <a asp-controller="SpareProcurementView" asp-action="Create">
+                        <div class="card mb-3 equip-card">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="~/images/add.png"
+                                         alt="Trendy Pants and Shoes"
+                                         class="img-fluid rounded-start" />
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="equip-card-title">New Spare Procurement</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row equip-row">
+                <div class="card col-md-4 equip-col">
+                    <a asp-controller="SpareProcurementView" asp-action="IndexEdit">
+                        <div class="card mb-3 equip-card">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="~/images/edit.png"
+                                         alt="Trendy Pants and Shoes"
+                                         class="img-fluid rounded-start" />
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="equip-card-title">Edit Spare Procument</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="card col-md-4 equip-col">
+                    <a asp-controller="EquipmentProcurementView" asp-action="Index">
+                        <div class="card mb-3 equip-card">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="~/images/view.jpg"
+                                         alt="Trendy Pants and Shoes"
+                                         class="img-fluid rounded-start" />
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="equip-card-title">View Equipment Procurement</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="card col-md-4 equip-col">
+                    <a asp-controller="SpareProcurementView" asp-action="Index">
+                        <div class="card mb-3 equip-card">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="~/images/view.jpg"
+                                         alt="Trendy Pants and Shoes"
+                                         class="img-fluid rounded-start" />
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="equip-card-title">View Spare Procurement</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

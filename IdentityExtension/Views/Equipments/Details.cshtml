@@ -1,0 +1,102 @@
+﻿@model IdentityExtension.Models.Equipment
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Equipment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.srNo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.srNo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.make)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.make)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.model)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.model)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.state)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.state)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.remarks)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.remarks)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.userId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.userId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.cDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.cDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.action)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.action)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.g47Remarks)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.g47Remarks)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.g47Date)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.g47Date)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.del)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.del)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.delDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.delDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EquipmentTable)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EquipmentTable.equipment)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Base)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Base.id)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

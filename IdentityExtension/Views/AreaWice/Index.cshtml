@@ -1,0 +1,39 @@
+﻿@model IdentityExtension.Models.AreaWise
+@{
+    ViewData["Title"] = "Index";
+    ViewData["Nav"] = "nav";
+}
+
+<div class="container">
+    <div class="card-group">
+        <div class="row title-row">
+            <div class="card col-md-2 equip-col"></div>
+            <div class="card col-md-8 equip-col"><h2 class="head_title">Equipment Available in Areas</h2></div>
+            <div class="card col-md-2 equip-col back-btn">
+                <a asp-controller="EquipmentViewManagement" asp-action="Index">
+                    <img src="~/images/back2.png" alt="..." class="img-thumbnail equip-back">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
+
+<div class="row form-background">
+    <div class="col-md-12 form-body">
+        <form asp-controller="Equipments" asp-action="CreateColSet">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="area" class="control-label"></label>
+                <select asp-for="area" class="form-control" asp-items="ViewBag.area"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="equipment" class="control-label"></label>
+                <select asp-for="equipment" class="form-control" asp-items="ViewBag.equipment"></select>
+            </div>
+            <div class="form-group submit-group">
+                <input type="submit" value="Create" class="btn-form" />
+            </div>
+        </form>
+    </div>
+</div>

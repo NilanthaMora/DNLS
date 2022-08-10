@@ -1,0 +1,22 @@
+﻿@model IdentityExtension.Models.SpareProcurement
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="card text-center text-white bg-danger mb-3 delete-card">
+    <div class="card-header delete-title">
+        Delete
+    </div>
+    <hr/>
+    <div class="card-body delete-body">
+        <h5 class="card-title delete-title-sub">Are you sure you want to delete this?</h5>
+        <p class="card-text">@Html.DisplayFor(model => model.partNo) | @Html.DisplayFor(model => model.sbRef)</p>
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="id" />
+            <input type="submit" value="Delete" class="btn btn-default delete-btn" /> |
+            <a asp-action="IndexEdit" class="btn btn-primary">Back to List</a>
+        </form>
+    </div>
+</div>
+

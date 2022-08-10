@@ -1,0 +1,126 @@
+﻿@model IdentityExtension.Models.SatPhone
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>SatPhone</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.location)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.location)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.inSNo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.inSNo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.antennaSrno)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.antennaSrno)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.receiverSrno)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.receiverSrno)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.voice)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.voice)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.fax)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.fax)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.dataLimit)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.dataLimit)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.imeNo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.imeNo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.type)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.type)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.dateInstalled)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.dateInstalled)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.dateModified)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.dateModified)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.pfileNum)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.pfileNum)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.pfileDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.pfileDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.price)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.price)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.weDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.weDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.expireDateBattery)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.expireDateBattery)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Equipment)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Equipment.srNo)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

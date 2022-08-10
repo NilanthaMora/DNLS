@@ -1,0 +1,48 @@
+﻿@model IdentityExtension.Models.MakeModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MakeModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.id)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Make)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Make.makeId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Model)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Model.modelId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.system)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.system)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EquipmentTable)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EquipmentTable.equipment)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>

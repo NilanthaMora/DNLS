@@ -1,0 +1,44 @@
+﻿@model IEnumerable<IdentityExtension.Models.EquipmentTable>
+
+@{
+    ViewData["Title"] = "Index";
+    ViewBag.role = "user";
+    ViewData["Nav"] = "nav";
+}
+<div class="container">
+    <div class="card-group">
+        <div class="row title-row">
+            <div class="card col-md-2 equip-col"></div>
+            <div class="card col-md-8 equip-col"><h2 class="head_title">View Equipment - @ViewBag.menu</h2></div>
+            <div class="card col-md-2 equip-col back-btn">
+                <a asp-controller="EquipmentViewManagement" asp-action="Index">
+                    <img src="~/images/back2.png" alt="..." class="img-thumbnail equip-back">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
+
+
+<table class="equip_table table table-striped">
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class="eq_tr">
+                <td class="eq_td">
+                    <img src="~/@Html.DisplayFor(modelItem => item.imageUrl)" alt="..." class="img-thumbnail eqip">
+                </td>
+                <td class="eq_td">
+                    @Html.DisplayFor(modelItem => item.equipment)
+                </td>
+                <td class="eq_td">
+                    @Html.DisplayFor(modelItem => item.varName)
+                </td>
+                <td class="eq_td">
+                    <a asp-controller="Equipments" asp-action="@ViewBag.menu" asp-route-id="@item.varName" class="btn btn-info">Select</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

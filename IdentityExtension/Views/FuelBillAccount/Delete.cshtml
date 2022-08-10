@@ -1,0 +1,78 @@
+﻿@model IdentityExtension.Models.FuelBillAccount
+
+@{
+    ViewData["Title"] = "Delete";
+    ViewData["Nav"] = "nav";
+}
+
+<div class="container">
+    <div class="card-group">
+        <div class="row">
+            <div class="card col-md-2 equip-col"></div>
+            <div class="card col-md-8 equip-col"><h2 class="head_title">Delete Fuel Bill Account</h2></div>
+            <div class="card col-md-2 equip-col back-btn">
+                <a asp-controller="FuelBillAccount" asp-action="Index">
+                    <img src="~/images/back2.png" alt="..." class="img-thumbnail equip-back">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.baseId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.baseId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.subUnitId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.subUnitId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.accountNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.accountNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.active)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.active)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.createdDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.createdDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.userId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.userId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FuelBillType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FuelBillType.id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Area)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Area.id)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="billAccId" />
+        <input type="submit" value="Delete" class="btn btn-default" />
+    </form>
+</div>

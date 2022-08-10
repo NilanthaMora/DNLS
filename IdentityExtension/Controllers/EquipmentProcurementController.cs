@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using IdentityExtension.Data;
 using IdentityExtension.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace IdentityExtension.Controllers
 {
+    [Authorize]
     public class EquipmentProcurementController : Controller
     {
         private readonly DnlDBContext _context;

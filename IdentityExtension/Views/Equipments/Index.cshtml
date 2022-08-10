@@ -1,0 +1,66 @@
+﻿@model IEnumerable<IdentityExtension.Models.Equipment>
+
+@{
+    ViewData["Title"] = "Index";
+    ViewData["Nav"] = "nav";
+}
+
+<div class="container">
+    <div class="card-group">
+        <div class="row title-row">
+            <div class="card col-md-2 equip-col"></div>
+            <div class="card col-md-8 equip-col"><h2 class="head_title">Report on Total Number of Equipments</h2></div>
+            <div class="card col-md-2 equip-col back-btn">
+                <a asp-controller="EquipmentViewManagement" asp-action="Index">
+                    <img src="~/images/back2.png" alt="..." class="img-thumbnail equip-back">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
+
+<table class="equip_table_admin table table-striped">
+    <thead>
+        <tr>
+            <th class="eq_th_admin">
+                Equipment Name
+            </th>
+            <th class="eq_th_admin">
+                OP Equipment
+            </th>
+            <th class="eq_th_admin">
+                NOP Equipment
+            </th>
+            <th class="eq_th_admin">
+                SEMI-OP Equipment
+            </th>
+            <th class="eq_th_admin">
+                Total Equipment
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in @ViewBag.report)
+        {
+            <tr>
+                <td class="eq_th_admin">
+                    @item.equipment
+                </td>
+                <td class="eq_th_admin">
+                    @item.op
+                </td>
+                <td class="eq_th_admin">
+                    @item.nop
+                </td>
+                <td class="eq_th_admin">
+                    @item.sop
+                </td>
+                <td class="eq_th_admin">
+                    @item.total
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

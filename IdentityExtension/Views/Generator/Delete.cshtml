@@ -1,0 +1,141 @@
+﻿@model IdentityExtension.Models.Generator
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Generator</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.mountedAt)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.mountedAt)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.kva)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.kva)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.voltage)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.voltage)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.phase)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.phase)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.frequancy)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.frequancy)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.alternatorModel)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.alternatorModel)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.alternatorMake)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.alternatorMake)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.alternatorSrno)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.alternatorSrno)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.primemoverModel)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.primemoverModel)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.primemoverMake)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.primemoverMake)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.primemoverSrno)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.primemoverSrno)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.mrh)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.mrh)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.totalRunHours)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.totalRunHours)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.fullLoad)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.fullLoad)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.maxLoad)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.maxLoad)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.presentage)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.presentage)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ledgerPageNo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ledgerPageNo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.mode)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.mode)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.dateModified)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.dateModified)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Equipment)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Equipment.srNo)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="id" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

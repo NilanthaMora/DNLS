@@ -1,0 +1,132 @@
+﻿@model IdentityExtension.Models.Bill.ElectricityBillDetail
+
+@{
+    ViewData["Title"] = "Create";
+    ViewData["Nav"] = "nav";
+}
+
+<div class="container">
+    <div class="card-group">
+        <div class="row">
+            <div class="card col-md-2 equip-col"></div>
+            <div class="card col-md-8 equip-col"><h2 class="head_title">New Electricity Bill Detail</h2></div>
+            <div class="card col-md-2 equip-col back-btn">
+                <a asp-controller="ElectricityBill" asp-action="ConsumptionElectricity">
+                    <img src="~/images/back2.png" alt="..." class="img-thumbnail equip-back">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
+<div class="row form-background">
+    <div class="col-md-12 form-body">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="billType" class="control-label"></label>
+                <select asp-for="billType" class="form-control" asp-items="ViewBag.billType"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="year" class="control-label"></label>
+                <input asp-for="year" class="form-control" />
+                <span asp-validation-for="year" class="text-danger"></span>
+            </div>
+            @*<div class="form-group">
+            <label asp-for="month" class="control-label"></label>
+            <input asp-for="month" class="form-control" />
+            <span asp-validation-for="month" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <label asp-for="month" class="control-label"></label>
+                <select asp-for="month" class="form-control" asp-items="ViewBag.months"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="lastMonth" class="control-label"></label>
+                <input asp-for="lastMonth" class="form-control" />
+                <span asp-validation-for="lastMonth" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="currentMonth" class="control-label"></label>
+                <input asp-for="currentMonth" class="form-control" />
+                <span asp-validation-for="currentMonth" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="unit" class="control-label"></label>
+                <input asp-for="unit" class="form-control" />
+                <span asp-validation-for="unit" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="chargePerUnit" class="control-label"></label>
+                <input asp-for="chargePerUnit" class="form-control" />
+                <span asp-validation-for="chargePerUnit" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="departmentCharge" class="control-label"></label>
+                <input asp-for="departmentCharge" class="form-control" />
+                <span asp-validation-for="departmentCharge" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="fixedCharges" class="control-label"></label>
+                <input asp-for="fixedCharges" class="form-control" />
+                <span asp-validation-for="fixedCharges" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="monthlyCost" class="control-label"></label>
+                <input asp-for="monthlyCost" class="form-control" />
+                <span asp-validation-for="monthlyCost" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="billConfirm" /> @Html.DisplayNameFor(model => model.billConfirm)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="createdDate" class="control-label"></label>
+                <input asp-for="createdDate" class="form-control" />
+                <span asp-validation-for="createdDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="userId" class="control-label"></label>
+                <input asp-for="userId" class="form-control" />
+                <span asp-validation-for="userId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="editDate" class="control-label"></label>
+                <input asp-for="editDate" class="form-control" />
+                <span asp-validation-for="editDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="editUserId" class="control-label"></label>
+                <input asp-for="editUserId" class="form-control" />
+                <span asp-validation-for="editUserId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="billConUserId" class="control-label"></label>
+                <input asp-for="billConUserId" class="form-control" />
+                <span asp-validation-for="billConUserId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="billConDate" class="control-label"></label>
+                <input asp-for="billConDate" class="form-control" />
+                <span asp-validation-for="billConDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="adfRefer" class="control-label"></label>
+                <input asp-for="adfRefer" class="form-control" />
+                <span asp-validation-for="adfRefer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="adfDate" class="control-label"></label>
+                <input asp-for="adfDate" class="form-control" />
+                <span asp-validation-for="adfDate" class="text-danger"></span>
+            </div>
+            <div class="form-group submit-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+

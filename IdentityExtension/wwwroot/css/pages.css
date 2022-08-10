@@ -1,0 +1,10 @@
+﻿body {
+}
+
+.page-title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 500;
+    font-family: ui-sans-serif;
+    padding-top: 20px;
+}

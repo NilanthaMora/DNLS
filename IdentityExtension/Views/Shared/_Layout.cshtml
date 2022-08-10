@@ -3,11 +3,14 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - IdentityExtension</title>
+    <title>Electrical and Electronic Maintenance System</title>
+    <link rel="icon" type="image/png" href="~/images/ele.png" />
     @*<environment include="Development">*@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-lumen.css" />
     <link rel="stylesheet" href="~/css/front-page.css" />
     <link rel="stylesheet" href="~/css/equipment.css" />
+    <link rel="stylesheet" href="~/css/Forms.css" />
+    <link rel="stylesheet" href="~/css/pages.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     @*</environment>*@
     @*<environment exclude="Development">
@@ -19,7 +22,7 @@
     @RenderSection("page_css", required: false)
 </head>
 <body class="body-main">
-     
+
     <partial name="_Navbar" />
 
     @if (ViewData["Title"].ToString() == "Page")
@@ -39,7 +42,7 @@
             <div>
                 @RenderBody()
             </div>
-            <hr />
+            @*<hr />*@
         </div>
     }
 

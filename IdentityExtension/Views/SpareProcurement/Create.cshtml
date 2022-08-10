@@ -1,0 +1,61 @@
+﻿@model IdentityExtension.Models.SpareProcurement
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>SpareProcurement</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="partNo" class="control-label"></label>
+                <input asp-for="partNo" class="form-control" />
+                <span asp-validation-for="partNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="sbRef" class="control-label"></label>
+                <input asp-for="sbRef" class="form-control" />
+                <span asp-validation-for="sbRef" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="currentStock" class="control-label"></label>
+                <input asp-for="currentStock" class="form-control" />
+                <span asp-validation-for="currentStock" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="firstRate" class="control-label"></label>
+                <input asp-for="firstRate" class="form-control" />
+                <span asp-validation-for="firstRate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="secondRate" class="control-label"></label>
+                <input asp-for="secondRate" class="form-control" />
+                <span asp-validation-for="secondRate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="thirdRate" class="control-label"></label>
+                <input asp-for="thirdRate" class="form-control" />
+                <span asp-validation-for="thirdRate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="forthRate" class="control-label"></label>
+                <input asp-for="forthRate" class="form-control" />
+                <span asp-validation-for="forthRate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="procuId" class="control-label"></label>
+                <select asp-for="procuId" class ="form-control" asp-items="ViewBag.procuId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+

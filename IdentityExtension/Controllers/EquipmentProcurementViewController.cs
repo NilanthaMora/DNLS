@@ -7,21 +7,53 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using IdentityExtension.Data;
 using IdentityExtension.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace IdentityExtension.Controllers
 {
+    [Authorize]
     public class EquipmentProcurementViewController : Controller
     {
         private readonly DnlDBContext _context;
+        private readonly ApplicationDbContext _applicationDbContext;
+        private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public EquipmentProcurementViewController(DnlDBContext context)
+        public EquipmentProcurementViewController(ApplicationDbContext applicationDbContext, DnlDBContext context, SignInManager<ApplicationUser> signInManager,
+            UserManager<ApplicationUser> userManager)
         {
             _context = context;
-        }
+            _signInManager = signInManager;
+            _userManager = userManager;
+            _applicationDbContext = applicationDbContext;        }
 
         // GET: EquipmentProcurementView
         public async Task<IActionResult> Index()
         {
+
+            var dnlDBContext = _context.equipmentProcurements.Include(e => e.Procurement);
+            return View(await dnlDBContext.ToListAsync());
+        }
+
+        // GET: EquipmentProcurementView
+        public async Task<IActionResult> IndexEdit()
+        {
+            var user = await _userManager.GetUserAsync(HttpContext.User);
+            try
+            {
+                var userOb = await _applicationDbContext.applicationUsers.
+                    FirstOrDefaultAsync(u => u.Id == user.Id);
+
+                ViewBag.role = userOb.UserRole;
+            }
+            catch (Exception)
+            {
+                return NotFound();
+            }
+            
+            
+
             var dnlDBContext = _context.equipmentProcurements.Include(e => e.Procurement);
             return View(await dnlDBContext.ToListAsync());
         }
@@ -46,8 +78,17 @@ namespace IdentityExtension.Controllers
         }
 
         // GET: EquipmentProcurementView/Create
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
+            List<SelectListItem> eq = _context.equipment_Tables.Select(e => new SelectListItem {
+                Value = e.equipmentCode.ToString(),  
+                Text = e.equipment
+            }).ToList(); 
+            //ViewData["Equipment"] = await eq;
+            ViewBag.equipments = new SelectList(_context.equipment_Tables, "equipmentCode", "equipment");
+
+            ViewBag.EquipmentList = eq; 
+
             ViewData["procuId"] = new SelectList(_context.procurements, "id", "id");
             return View();
         }
@@ -61,6 +102,9 @@ namespace IdentityExtension.Controllers
         {
             if (ModelState.IsValid)
             {
+
+                var user = await _userManager.GetUserAsync(HttpContext.User);
+                
                 Procurement pro = new Procurement()
                 {
                     id = procurement.id,
@@ -72,7 +116,7 @@ namespace IdentityExtension.Controllers
                     qtyApproved = procurement.qtyApproved,
                     lastPurchasePrice = procurement.lastPurchasePrice,
                     remarks = procurement.remarks,
-                    userId = procurement.userId,
+                    userId = user.Id,
                     cDate = procurement.cDate,
                     EquipmentProcurement = new EquipmentProcurement()
                     {
@@ -98,14 +142,42 @@ namespace IdentityExtension.Controllers
             {
                 return NotFound();
             }
-
-            var equipmentProcurement = await _context.equipmentProcurements.FindAsync(id);
-            if (equipmentProcurement == null)
+            var equipmentProcurementAll = await _context.equipmentProcurements.Where(e => e.id == id).Include(e => e.Procurement).FirstOrDefaultAsync();
+            
+            
+            //var equipmentProcurement = await _context.equipmentProcurements.FindAsync(id);
+            if (equipmentProcurementAll == null)
             {
                 return NotFound();
             }
-            ViewData["procuId"] = new SelectList(_context.procurements, "id", "id", equipmentProcurement.procuId);
-            return View(equipmentProcurement);
+
+            List<SelectListItem> eq = _context.equipment_Tables.Select(e => new SelectListItem
+            {
+                Value = e.equipmentCode.ToString(),
+                Text = e.equipment
+            }).ToList();
+
+            ViewBag.EquipmentList = eq;
+
+            EquipProcuView pro = new EquipProcuView()
+            {
+                id = equipmentProcurementAll.Procurement.id, 
+                equipCode = equipmentProcurementAll.Procurement.equipCode,  
+                make = equipmentProcurementAll.Procurement.make,
+                model = equipmentProcurementAll.Procurement.model,
+                rlRef = equipmentProcurementAll.Procurement.rlRef,
+                qtyOrdered = equipmentProcurementAll.Procurement.qtyOrdered,
+                qtyApproved = equipmentProcurementAll.Procurement.qtyApproved,
+                lastPurchasePrice = equipmentProcurementAll.Procurement.lastPurchasePrice,
+                remarks = equipmentProcurementAll.Procurement.remarks,
+                userId = equipmentProcurementAll.Procurement.userId,
+                cDate = equipmentProcurementAll.Procurement.cDate,
+                item = equipmentProcurementAll.item,
+                fileRef = equipmentProcurementAll.fileRef,
+                proDistribution = equipmentProcurementAll.proDistribution
+            };
+           // ViewData["procuId"] = new SelectList(_context.procurements, "id", "id", equipmentProcurement.procuId);
+            return View(pro);
         }
 
         // POST: EquipmentProcurementView/Edit/5
@@ -113,9 +185,9 @@ namespace IdentityExtension.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("id,item,fileRef,proDistribution,procuId")] EquipmentProcurement equipmentProcurement)
+        public async Task<IActionResult> Edit(int id, [Bind("id,equipCode,make,model,rlRef,qtyOrdered,qtyApproved,lastPurchasePrice,remarks,userId,cDate,item,fileRef,proDistribution,procuId")] EquipProcuView procurement)
         {
-            if (id != equipmentProcurement.id)
+            if (id != procurement.id)
             {
                 return NotFound();
             }
@@ -124,12 +196,36 @@ namespace IdentityExtension.Controllers
             {
                 try
                 {
-                    _context.Update(equipmentProcurement);
+                    var user = await _userManager.GetUserAsync(HttpContext.User);
+                    Procurement pro = new Procurement()
+                    {
+                        id = procurement.id,
+                        equipCode = procurement.equipCode,
+                        make = procurement.make,
+                        model = procurement.model,
+                        rlRef = procurement.rlRef,
+                        qtyOrdered = procurement.qtyOrdered,
+                        qtyApproved = procurement.qtyApproved,
+                        lastPurchasePrice = procurement.lastPurchasePrice,
+                        remarks = procurement.remarks,
+                        userId = user.Id,
+                        cDate = procurement.cDate,
+                        EquipmentProcurement = new EquipmentProcurement()
+                        {
+                            id = procurement.id,
+                            item = procurement.item,
+                            fileRef = procurement.fileRef,
+                            proDistribution = procurement.proDistribution,
+                            procuId = procurement.id
+                        }
+
+                    };
+                    _context.Update(pro);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!EquipmentProcurementExists(equipmentProcurement.id))
+                    if (!EquipmentProcurementExists(procurement.id))
                     {
                         return NotFound();
                     }
@@ -140,8 +236,8 @@ namespace IdentityExtension.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["procuId"] = new SelectList(_context.procurements, "id", "id", equipmentProcurement.procuId);
-            return View(equipmentProcurement);
+           // ViewData["procuId"] = new SelectList(_context.procurements, "id", "id", equipmentProcurement.procuId);
+            return View(procurement);
         }
 
         // GET: EquipmentProcurementView/Delete/5

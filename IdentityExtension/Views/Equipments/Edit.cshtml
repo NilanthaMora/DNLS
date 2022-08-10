@@ -1,0 +1,96 @@
+﻿@model IdentityExtension.Models.Equipment
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>Equipment</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="id" />
+            <div class="form-group">
+                <label asp-for="srNo" class="control-label"></label>
+                <input asp-for="srNo" class="form-control" />
+                <span asp-validation-for="srNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="make" class="control-label"></label>
+                <input asp-for="make" class="form-control" />
+                <span asp-validation-for="make" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="model" class="control-label"></label>
+                <input asp-for="model" class="form-control" />
+                <span asp-validation-for="model" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="state" class="control-label"></label>
+                <input asp-for="state" class="form-control" />
+                <span asp-validation-for="state" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="eqBase" class="control-label"></label>
+                <select asp-for="eqBase" class="form-control" asp-items="ViewBag.eqBase"></select>
+                <span asp-validation-for="eqBase" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="remarks" class="control-label"></label>
+                <input asp-for="remarks" class="form-control" />
+                <span asp-validation-for="remarks" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="userId" class="control-label"></label>
+                <input asp-for="userId" class="form-control" />
+                <span asp-validation-for="userId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="cDate" class="control-label"></label>
+                <input asp-for="cDate" class="form-control" />
+                <span asp-validation-for="cDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="action" class="control-label"></label>
+                <input asp-for="action" class="form-control" />
+                <span asp-validation-for="action" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="g47Remarks" class="control-label"></label>
+                <input asp-for="g47Remarks" class="form-control" />
+                <span asp-validation-for="g47Remarks" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="g47Date" class="control-label"></label>
+                <input asp-for="g47Date" class="form-control" />
+                <span asp-validation-for="g47Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="del" class="control-label"></label>
+                <input asp-for="del" class="form-control" />
+                <span asp-validation-for="del" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="delDate" class="control-label"></label>
+                <input asp-for="delDate" class="form-control" />
+                <span asp-validation-for="delDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="eqTId" class="control-label"></label>
+                <select asp-for="eqTId" class="form-control" asp-items="ViewBag.eqTId"></select>
+                <span asp-validation-for="eqTId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

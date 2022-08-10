@@ -1,0 +1,104 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    ViewData["Nav"] = "nav";
+}
+
+<div class="container">
+    <div class="card-group">
+        <div class="row title-row">
+            <div class="card col-md-2 equip-col"></div>
+            <div class="card col-md-8 equip-col"><h2 class="head_title">Manage Base</h2></div>
+            <div class="card col-md-2 equip-col back-btn">
+                <a asp-controller="Home" asp-action="Index">
+                    <img src="~/images/back2.png" alt="..." class="img-thumbnail equip-back">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
+<div class="form_home">
+    <br />
+    <div class="container">
+        <div class="card-group">
+            <div class="row equip-row">
+                <div class="card col-md-4 equip-col">
+                    <a asp-controller="Area" asp-action="Index">
+                        <div class="card mb-3 equip-card">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="~/images/i-area.png"
+                                         alt="Trendy Pants and Shoes"
+                                         class="img-fluid rounded-start" />
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="equip-card-title">Area</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="card col-md-4 equip-col">
+                    <a asp-controller="ShipType" asp-action="Index">
+                        <div class="card mb-3 equip-card">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="~/images/i-ship.png"
+                                         alt="Trendy Pants and Shoes"
+                                         class="img-fluid rounded-start" />
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="equip-card-title">Ship Type</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="card col-md-4 equip-col">
+                    <a asp-controller="Base" asp-action="Index">
+                        <div class="card mb-3 equip-card">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="~/images/i-base.png"
+                                         alt="Trendy Pants and Shoes"
+                                         class="img-fluid rounded-start" />
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="equip-card-title">Base</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row equip-row">
+                <div class="card col-md-4 equip-col">
+                    <a asp-controller="SubUnit" asp-action="Index">
+                        <div class="card mb-3 equip-card">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="~/images/i-subunit.png"
+                                         alt="Trendy Pants and Shoes"
+                                         class="img-fluid rounded-start" />
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="equip-card-title">Sub Unit</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

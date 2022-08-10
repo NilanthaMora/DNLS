@@ -4,42 +4,20 @@
     ViewData["Title"] = "Delete";
 }
 
-<h2>Delete</h2>
-
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>EquipmentProcurement</h4>
+<div class="card text-center text-white bg-danger mb-3 delete-card">
+    <div class="card-header delete-title">
+        Delete
+    </div>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.item)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.item)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.fileRef)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.fileRef)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.proDistribution)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.proDistribution)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Procurement)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Procurement.id)
-        </dd>
-    </dl>
-    
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="id" />
-        <input type="submit" value="Delete" class="btn btn-default" /> |
-        <a asp-action="Index">Back to List</a>
-    </form>
+    <div class="card-body delete-body">
+        <h5 class="card-title delete-title-sub">Are you sure you want to delete this?</h5>
+        <p class="card-text">@Html.DisplayFor(model => model.item) | @Html.DisplayFor(model => model.fileRef)</p>
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="id" />
+            <input type="submit" value="Delete" class="btn btn-default delete-btn" /> |
+            <a asp-action="IndexEdit" class="btn btn-primary">Back to List</a>
+        </form>
+    </div>
 </div>
+
+

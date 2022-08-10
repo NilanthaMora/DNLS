@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewData["Title"] = "SelectByColumn";
+    ViewData["Nav"] = "nav";
+}
+
+<div class="container">
+    <div class="card-group">
+        <div class="row">
+            <div class="card col-md-2 equip-col"></div>
+            <div class="card col-md-8 equip-col"><h2 class="head_title">Equipment Name</h2></div>
+            <div class="card col-md-2 equip-col back-btn">
+                <a asp-controller="AreaWice" asp-action="Index">
+                    <img src="~/images/back2.png" alt="..." class="img-thumbnail equip-back">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
+
+<h2>SelectByColumn</h2>
+<div>@TempData["Message"]</div>
+

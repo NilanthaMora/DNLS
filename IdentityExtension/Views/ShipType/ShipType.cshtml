@@ -1,0 +1,41 @@
+﻿@model IdentityExtension.Models.ShipType
+
+@{
+    ViewData["Title"] = "ShipType";
+    ViewData["Nav"] = "nav";
+}
+
+<div class="container">
+    <div class="card-group">
+        <div class="row">
+            <div class="card col-md-2 equip-col"></div>
+            <div class="card col-md-8 equip-col"><h2 class="head_title">Ship Type</h2></div>
+            <div class="card col-md-2 equip-col back-btn">
+                <a asp-controller="EquipmentViewManagement" asp-action="Index">
+                    <img src="~/images/back2.png" alt="..." class="img-thumbnail equip-back">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
+<div class="row form-background">
+    <div class="col-md-12 form-body">
+        <div class="row">
+            <div class="col-md-12">
+                <form asp-action="GetShip">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="id" />
+                    <div class="form-group">
+                        <label asp-for="description" class="control-label"></label>
+                        <select asp-for="description" class="form-control" asp-items="ViewBag.shipType"></select>
+                    </div>
+                    <div class="form-group submit-group">
+                        <input type="submit" value="Save" class="btn-form" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

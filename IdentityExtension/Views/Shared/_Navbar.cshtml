@@ -24,4 +24,22 @@
             </div>
         </div>
     </nav>
+
+    <nav class="navbar navbar-light bg-light">
+        <div class="container" style="display: flex">
+            <div class="nav left">
+                <a style="display:flex" class="title-navbar navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="~/images/home-logo.jpg" alt=""> 
+                    <span class="nav-link-span home-title"><span class="u-nav">Home</span></span>
+                </a>
+                <button id="menu" class="btn-nav"><span class="fas fa-bars"></span></button>
+            </div>
+            <div class="nav right light-right-nav">
+                <a asp-area="" asp-controller="EquipmentManagement" asp-action="Index" class="nav-link"><span class="nav-link-span"><span class="u-nav">Equipment</span></span></a>
+                <a asp-area="" asp-controller="ProcurementManagement" asp-action="Index" class="nav-link"><span class="nav-link-span"><span class="u-nav">Procurement</span></span></a>
+                <a asp-area="" asp-controller="BillManagement" asp-action="Index" class="nav-link"><span class="nav-link-span"><span class="u-nav">Bill</span></span></a>
+                <a asp-area="" asp-controller="BaseManagement" asp-action="Index" class="nav-link"><span class="nav-link-span"><span class="u-nav">Base</span></span></a>
+            </div>
+        </div>
+    </nav>
 }

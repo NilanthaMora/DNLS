@@ -1,0 +1,115 @@
+﻿@model IdentityExtension.Models.SpareProcuView
+
+@{
+    ViewData["Title"] = "Create";
+    ViewData["Nav"] = "nav";
+}
+<div class="container">
+    <div class="card-group">
+        <div class="row">
+            <div class="card col-md-2 equip-col"></div>
+            <div class="card col-md-8 equip-col"><h2 class="head_title">Create Spare Equipment Procurement</h2></div>
+            <div class="card col-md-2 equip-col back-btn">
+                <a asp-controller="ProcurementManagement" asp-action="Index">
+                    <img src="~/images/back2.png" alt="..." class="img-thumbnail equip-back">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
+<div class="row form-background">
+    <div class="col-md-4 form-body">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="equipCode" class="control-label"></label>
+                <select name="equipCode" asp-for="equipCode" class="form-control" asp-items="@ViewBag.EquipmentList"></select>
+                <span asp-validation-for="equipCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="make" class="control-label"></label>
+                <input asp-for="make" class="form-control" />
+                <span asp-validation-for="make" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="model" class="control-label"></label>
+                <input asp-for="model" class="form-control" />
+                <span asp-validation-for="model" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="rlRef" class="control-label"></label>
+                <input asp-for="rlRef" class="form-control" />
+                <span asp-validation-for="rlRef" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="qtyOrdered" class="control-label"></label>
+                <input asp-for="qtyOrdered" class="form-control" />
+                <span asp-validation-for="qtyOrdered" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="qtyApproved" class="control-label"></label>
+                <input asp-for="qtyApproved" class="form-control" />
+                <span asp-validation-for="qtyApproved" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="lastPurchasePrice" class="control-label"></label>
+                <input asp-for="lastPurchasePrice" class="form-control" />
+                <span asp-validation-for="lastPurchasePrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="remarks" class="control-label"></label>
+                <input asp-for="remarks" class="form-control" />
+                <span asp-validation-for="remarks" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="cDate" class="control-label"></label>
+                <input asp-for="cDate" class="form-control" />
+                <span asp-validation-for="cDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="partNo" class="control-label"></label>
+                <input asp-for="partNo" class="form-control" />
+                <span asp-validation-for="partNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="sbRef" class="control-label"></label>
+                <input asp-for="sbRef" class="form-control" />
+                <span asp-validation-for="sbRef" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="currentStock" class="control-label"></label>
+                <input asp-for="currentStock" class="form-control" />
+                <span asp-validation-for="currentStock" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="firstRate" class="control-label"></label>
+                <input asp-for="firstRate" class="form-control" />
+                <span asp-validation-for="firstRate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="secondRate" class="control-label"></label>
+                <input asp-for="secondRate" class="form-control" />
+                <span asp-validation-for="secondRate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="thirdRate" class="control-label"></label>
+                <input asp-for="thirdRate" class="form-control" />
+                <span asp-validation-for="thirdRate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="forthRate" class="control-label"></label>
+                <input asp-for="forthRate" class="form-control" />
+                <span asp-validation-for="forthRate" class="text-danger"></span>
+            </div>
+            <div class="form-group submit-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

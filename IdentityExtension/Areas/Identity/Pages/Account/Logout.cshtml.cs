@@ -33,7 +33,8 @@ namespace IdentityExtension.Areas.Identity.Pages.Account
             _logger.LogInformation("User logged out.");
             if (returnUrl != null)
             {
-                return LocalRedirect("/Account/Logout");
+                //return LocalRedirect("/Account/Logout");
+                return LocalRedirect("/");
             }
             else
             {
